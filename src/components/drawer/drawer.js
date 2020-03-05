@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-
 import { makeStyles } from '@material-ui/core/styles'
-import DrawerUI from '@material-ui/core/Drawer'
-import Divider from '@material-ui/core/Divider'
+import { Drawer as DrawerUI, Divider } from '@material-ui/core'
 
 import DRAWER_CONFIG from './drawer.config'
 import DrawerList from './drawer-list'

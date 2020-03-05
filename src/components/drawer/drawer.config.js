@@ -1,9 +1,9 @@
-import equipmentsIcon from '../../assets/drawer-icons/equipments.png'
-import weaponsIcon from '../../assets/drawer-icons/weapons.png'
-import setsIcon from '../../assets/drawer-icons/sets.png'
-import classesIcon from '../../assets/drawer-icons/classes.png'
-import createStuffIcon from '../../assets/drawer-icons/create-stuff.png'
-import myStuffsIcon from '../../assets/drawer-icons/my-stuffs.png'
+import equipmentsIcon from '../../assets/icons/equipments.png'
+import weaponsIcon from '../../assets/icons/weapons.png'
+import setsIcon from '../../assets/icons/sets.png'
+import classesIcon from '../../assets/icons/classes.png'
+import createStuffIcon from '../../assets/icons/create-stuff.png'
+import myStuffsIcon from '../../assets/icons/my-stuffs.png'
 
 const config = [
   {

@@ -1,0 +1,1524 @@
+[
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14076-count-harebourg",
+    "id": 14076,
+    "name": "Count Harebourg's Hat",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/16362.png",
+    "type": "Hat",
+    "description": "Count Harebourg was forced to become a recluse after the big freeze, but even back then, no living soul had ever seen his face. What is he hiding behind this hat, and what transformations has that face undergone after all these years?",
+    "effects": [
+      {
+        "text": "451 to 500 Vitality",
+        "start": 451,
+        "end": 500,
+        "name": "vitality"
+      },
+      {
+        "text": "71 to 100 Strength",
+        "start": 71,
+        "end": 100,
+        "name": "strength"
+      },
+      { "text": "41 to 60 Wisdom", "start": 41, "end": 60, "name": "wisdom" },
+      { "text": "1 Range", "start": 1, "name": "range" },
+      {
+        "text": "21 to 30 Prospecting",
+        "start": 21,
+        "end": 30,
+        "name": "prospecting"
+      },
+      {
+        "text": "16 to 20 Neutral Damage",
+        "start": 16,
+        "end": 20,
+        "name": "neutral-damage"
+      },
+      {
+        "text": "16 to 20 Earth Damage",
+        "start": 16,
+        "end": 20,
+        "name": "earth-damage"
+      },
+      {
+        "text": "-4 to -5% Neutral Resistance",
+        "start": -4,
+        "end": -5,
+        "name": "neutral-resistance"
+      },
+      {
+        "text": "-4 to -5% Earth Resistance",
+        "start": -4,
+        "end": -5,
+        "name": "earth-resistance"
+      },
+      {
+        "text": "-4 to -5% Fire Resistance",
+        "start": -4,
+        "end": -5,
+        "name": "fire-resistance"
+      },
+      {
+        "text": "-4 to -5% Water Resistance",
+        "start": -4,
+        "end": -5,
+        "name": "water-resistance"
+      },
+      {
+        "text": "-4 to -5% Air Resistance",
+        "start": -4,
+        "end": -5,
+        "name": "air-resistance"
+      },
+      {
+        "text": "6 to 8 AP Reduction",
+        "start": 6,
+        "end": 8,
+        "name": "ap-reduction"
+      },
+      { "text": "16 to 20 Lock", "start": 16, "end": 20, "name": "lock" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 270
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14079-age-old-helmet",
+    "id": 14079,
+    "name": "Age-Old Helmet",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/16363.png",
+    "type": "Hat",
+    "description": "It's hard to imagine Count Harebourg in a helm like this. Mind you, everyone goes through a rebellious stage, and to be fair, his has lasted more than a century.",
+    "effects": [
+      {
+        "text": "251 to 300 Vitality",
+        "start": 251,
+        "end": 300,
+        "name": "vitality"
+      },
+      {
+        "text": "71 to 100 Intelligence",
+        "start": 71,
+        "end": 100,
+        "name": "intelligence"
+      },
+      { "text": "31 to 40 Agility", "start": 31, "end": 40, "name": "agility" },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      { "text": "8 to 12 Heals", "start": 8, "end": 12, "name": "heals" },
+      { "text": "1 Summons", "start": 1, "name": "summons" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      {
+        "text": "7 to 10 Fire Damage",
+        "start": 7,
+        "end": 10,
+        "name": "fire-damage"
+      },
+      {
+        "text": "7 to 10 Air Damage",
+        "start": 7,
+        "end": 10,
+        "name": "air-damage"
+      },
+      {
+        "text": "11 to 15 Air Resistance",
+        "start": 11,
+        "end": 15,
+        "name": "air-resistance"
+      },
+      {
+        "text": "5 to 7% Earth Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "earth-resistance"
+      },
+      {
+        "text": "5 to 7% Water Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "water-resistance"
+      }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 271
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14082-bubotron-mask",
+    "id": 14082,
+    "name": "Bubotron Mask",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/16364.png",
+    "type": "Hat",
+    "description": "Like any good aristocrat, the Bubotron loves a good masked ball, but much to his great annoyance, he's never allowed to take part. The doormen always turn him away for not wearing a mask, even though he's quite clearly wearing this one.",
+    "effects": [
+      {
+        "text": "351 to 400 Vitality",
+        "start": 351,
+        "end": 400,
+        "name": "vitality"
+      },
+      { "text": "61 to 80 Agility", "start": 61, "end": 80, "name": "agility" },
+      { "text": "41 to 60 Wisdom", "start": 41, "end": 60, "name": "wisdom" },
+      { "text": "3 to 4% Critical", "start": 3, "end": 4, "name": "critical" },
+      { "text": "-1 Range", "start": -1, "name": "range" },
+      {
+        "text": "301 to 400 Initiative",
+        "start": 301,
+        "end": 400,
+        "name": "initiative"
+      },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      {
+        "text": "14 to 18 Air Damage",
+        "start": 14,
+        "end": 18,
+        "name": "air-damage"
+      },
+      {
+        "text": "6 to 8% Neutral Resistance",
+        "start": 6,
+        "end": 8,
+        "name": "neutral-resistance"
+      },
+      {
+        "text": "6 to 8% Earth Resistance",
+        "start": 6,
+        "end": 8,
+        "name": "earth-resistance"
+      },
+      {
+        "text": "4 to 6 AP Reduction",
+        "start": 4,
+        "end": 6,
+        "name": "ap-reduction"
+      }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 276
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14083-bubotron-amulet",
+    "id": 14083,
+    "name": "Bubotron Amulet",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/1231.png",
+    "type": "Amulet",
+    "description": "Bubotrons can turn their heads through 270 degrees, but are often confused by the sudden rotation. This amulet plays a vital role in allowing the dozy owls to remember the direction they should actually be facing.",
+    "effects": [
+      {
+        "text": "301 to 350 Vitality",
+        "start": 301,
+        "end": 350,
+        "name": "vitality"
+      },
+      {
+        "text": "71 to 100 Agility",
+        "start": 71,
+        "end": 100,
+        "name": "agility"
+      },
+      { "text": "31 to 50 Wisdom", "start": 31, "end": 50, "name": "wisdom" },
+      { "text": "3 to 4% Critical", "start": 3, "end": 4, "name": "critical" },
+      { "text": "1 AP", "start": 1, "name": "ap" },
+      { "text": "-1 Range", "start": -1, "name": "range" },
+      { "text": "1 Summons", "start": 1, "name": "summons" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      {
+        "text": "11 to 15 Air Damage",
+        "start": 11,
+        "end": 15,
+        "name": "air-damage"
+      },
+      {
+        "text": "16 to 20 Water Resistance",
+        "start": 16,
+        "end": 20,
+        "name": "water-resistance"
+      },
+      {
+        "text": "16 to 20 Air Resistance",
+        "start": 16,
+        "end": 20,
+        "name": "air-resistance"
+      },
+      { "text": "7 to 10 Lock", "start": 7, "end": 10, "name": "lock" },
+      {
+        "text": "7 to 10 Critical Damage",
+        "start": 7,
+        "end": 10,
+        "name": "critical-damage"
+      }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 276
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14162-epeni-belt",
+    "id": 14162,
+    "name": "Epeni's Belt",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/10247.png",
+    "type": "Belt",
+    "description": "Like many men, Epeni loved to compare his belt strap to other men's belt straps. The more he tugged at it, the longer it became, and the more he polished its buckle, the happier he felt. But happiness is fleeting, and if truth be told, Epeni was incredibly lonely.",
+    "effects": [
+      {
+        "text": "251 to 300 Vitality",
+        "start": 251,
+        "end": 300,
+        "name": "vitality"
+      },
+      { "text": "31 to 40 Chance", "start": 31, "end": 40, "name": "chance" },
+      { "text": "21 to 30 Wisdom", "start": 21, "end": 30, "name": "wisdom" },
+      { "text": "31 to 40 Power", "start": 31, "end": 40, "name": "power" },
+      { "text": "1 MP", "start": 1, "name": "mp" },
+      { "text": "2 Summons", "start": 2, "name": "summons" },
+      {
+        "text": "-301 to -400 Initiative",
+        "start": -301,
+        "end": -400,
+        "name": "initiative"
+      },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      {
+        "text": "7 to 10% Water Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "water-resistance"
+      },
+      {
+        "text": "7 to 10% Air Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "air-resistance"
+      },
+      {
+        "text": "-6 to -8 MP Parry",
+        "start": -6,
+        "end": -8,
+        "name": "mp-parry"
+      },
+      { "text": "11 to 15 Lock", "start": 11, "end": 15, "name": "lock" },
+      {
+        "text": "16 to 25 Pushback Damage",
+        "start": 16,
+        "end": 25,
+        "name": "pushback-damage"
+      },
+      {
+        "text": "16 to 25 Critical Damage",
+        "start": 16,
+        "end": 25,
+        "name": "critical-damage"
+      }
+    ],
+    "characteristics": [],
+    "conditions": "AP < 12",
+    "set": null
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14170-bzzzinga-headband",
+    "id": 14170,
+    "name": "Bzzzinga Headband",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/16366.png",
+    "type": "Hat",
+    "description": "Any dork who tries wearing this headband as a belt will receive a high-voltage bolt of electricity to their nether regions, quickly putting an end to such disillusioned practises. \"Bzzzing! AAAGH!\"",
+    "effects": [
+      {
+        "text": "351 to 400 Vitality",
+        "start": 351,
+        "end": 400,
+        "name": "vitality"
+      },
+      {
+        "text": "31 to 50 Strength",
+        "start": 31,
+        "end": 50,
+        "name": "strength"
+      },
+      {
+        "text": "31 to 50 Intelligence",
+        "start": 31,
+        "end": 50,
+        "name": "intelligence"
+      },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      { "text": "1 Range", "start": 1, "name": "range" },
+      {
+        "text": "301 to 400 Initiative",
+        "start": 301,
+        "end": 400,
+        "name": "initiative"
+      },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      {
+        "text": "11 to 15 Neutral Damage",
+        "start": 11,
+        "end": 15,
+        "name": "neutral-damage"
+      },
+      {
+        "text": "11 to 15 Earth Damage",
+        "start": 11,
+        "end": 15,
+        "name": "earth-damage"
+      },
+      {
+        "text": "11 to 15 Fire Damage",
+        "start": 11,
+        "end": 15,
+        "name": "fire-damage"
+      },
+      {
+        "text": "16 to 20 Neutral Resistance",
+        "start": 16,
+        "end": 20,
+        "name": "neutral-resistance"
+      },
+      { "text": "6 to 8 Lock", "start": 6, "end": 8, "name": "lock" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": null
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15183-staruman-mask",
+    "id": 15183,
+    "name": "Staruman Mask",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/16411.png",
+    "type": "Hat",
+    "description": "Perfect if you're desperate for a bit of alone time, this mask acts as a natural repellent for people that would otherwise come up and start speaking to you, especially children. Careful you don't use it too often or you'll become a bitter old fool whose stories are all boring, repetitive rants.",
+    "effects": [
+      {
+        "text": "251 to 300 Vitality",
+        "start": 251,
+        "end": 300,
+        "name": "vitality"
+      },
+      { "text": "31 to 50 Agility", "start": 31, "end": 50, "name": "agility" },
+      { "text": "31 to 50 Chance", "start": 31, "end": 50, "name": "chance" },
+      {
+        "text": "16 to 20 Critical Resistance",
+        "start": 16,
+        "end": 20,
+        "name": "critical-resistance"
+      },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      { "text": "-7 to -10 Dodge", "start": -7, "end": -10, "name": "dodge" },
+      {
+        "text": "9 to 12 Air Damage",
+        "start": 9,
+        "end": 12,
+        "name": "air-damage"
+      },
+      {
+        "text": "9 to 12 Water Damage",
+        "start": 9,
+        "end": 12,
+        "name": "water-damage"
+      },
+      {
+        "text": "21 to 25 Pushback Damage",
+        "start": 21,
+        "end": 25,
+        "name": "pushback-damage"
+      },
+      {
+        "text": "7 to 10% Earth Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "earth-resistance"
+      },
+      {
+        "text": "5 to 7 AP Reduction",
+        "start": 5,
+        "end": 7,
+        "name": "ap-reduction"
+      },
+      { "text": "2 Range", "start": 2, "name": "range" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 330
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15185-staruman-belt",
+    "id": 15185,
+    "name": "Staruman Belt",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/10268.png",
+    "type": "Belt",
+    "description": "Starumen hate going anywhere without their belt. As soon as they take it off at night, their body hair springs out in all directions just like their facial hair.",
+    "effects": [
+      {
+        "text": "301 to 350 Vitality",
+        "start": 301,
+        "end": 350,
+        "name": "vitality"
+      },
+      { "text": "51 to 70 Agility", "start": 51, "end": 70, "name": "agility" },
+      { "text": "51 to 70 Chance", "start": 51, "end": 70, "name": "chance" },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      {
+        "text": "9 to 12 Air Damage",
+        "start": 9,
+        "end": 12,
+        "name": "air-damage"
+      },
+      {
+        "text": "9 to 12 Water Damage",
+        "start": 9,
+        "end": 12,
+        "name": "water-damage"
+      },
+      {
+        "text": "5 to 7% Earth Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "earth-resistance"
+      },
+      {
+        "text": "5 to 7% Neutral Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "neutral-resistance"
+      },
+      {
+        "text": "5 to 7% Fire Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "fire-resistance"
+      },
+      { "text": "1 Summons", "start": 1, "name": "summons" },
+      { "text": "4 to 6% Critical", "start": 4, "end": 6, "name": "critical" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 330
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15187-nidas-ring",
+    "id": 15187,
+    "name": "Nidas's Ring",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/9288.png",
+    "type": "Ring",
+    "description": "This pugnacious ring loves the limelight and is happiest serving wearers who like fighting bare-fisted.",
+    "effects": [
+      {
+        "text": "201 to 250 Vitality",
+        "start": 201,
+        "end": 250,
+        "name": "vitality"
+      },
+      {
+        "text": "31 to 40 Intelligence",
+        "start": 31,
+        "end": 40,
+        "name": "intelligence"
+      },
+      { "text": "41 to 50 Wisdom", "start": 41, "end": 50, "name": "wisdom" },
+      { "text": "7 to 10 Dodge", "start": 7, "end": 10, "name": "dodge" },
+      {
+        "text": "9 to 12 Fire Damage",
+        "start": 9,
+        "end": 12,
+        "name": "fire-damage"
+      },
+      {
+        "text": "7 to 10% Earth Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "earth-resistance"
+      },
+      {
+        "text": "4 to 5 MP Reduction",
+        "start": 4,
+        "end": 5,
+        "name": "mp-reduction"
+      },
+      { "text": "7 to 10 Heals", "start": 7, "end": 10, "name": "heals" },
+      { "text": "1 Summons", "start": 1, "name": "summons" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 331
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15190-hairsh-bracelet",
+    "id": 15190,
+    "name": "Hairsh Bracelet",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/9289.png",
+    "type": "Ring",
+    "description": "Each Hairsh ball has a special meaning, which is why there are also some on this bracelet. You don't really care about the meanings; you just like 'em because they match your eyes.",
+    "effects": [
+      {
+        "text": "251 to 300 Vitality",
+        "start": 251,
+        "end": 300,
+        "name": "vitality"
+      },
+      { "text": "41 to 50 Power", "start": 41, "end": 50, "name": "power" },
+      {
+        "text": "7 to 10 Earth Damage",
+        "start": 7,
+        "end": 10,
+        "name": "earth-damage"
+      },
+      {
+        "text": "7 to 10 Neutral Damage",
+        "start": 7,
+        "end": 10,
+        "name": "neutral-damage"
+      },
+      {
+        "text": "7 to 10 Water Damage",
+        "start": 7,
+        "end": 10,
+        "name": "water-damage"
+      },
+      {
+        "text": "7 to 10% Neutral Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "neutral-resistance"
+      },
+      { "text": "3 to 4% Critical", "start": 3, "end": 4, "name": "critical" },
+      { "text": "2 Range", "start": 2, "name": "range" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 332
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15194-levitrof-boots",
+    "id": 15194,
+    "name": "Levitrof Boots",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/11260.png",
+    "type": "Boots",
+    "description": "As you may or may not have guessed from their name, Levitrofs levitate. These boots really aren't very useful at all.",
+    "effects": [
+      {
+        "text": "301 to 350 Vitality",
+        "start": 301,
+        "end": 350,
+        "name": "vitality"
+      },
+      {
+        "text": "41 to 60 Strength",
+        "start": 41,
+        "end": 60,
+        "name": "strength"
+      },
+      { "text": "41 to 60 Chance", "start": 41, "end": 60, "name": "chance" },
+      {
+        "text": "41 to 60 Intelligence",
+        "start": 41,
+        "end": 60,
+        "name": "intelligence"
+      },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      { "text": "11 to 15 Dodge", "start": 11, "end": 15, "name": "dodge" },
+      {
+        "text": "11 to 15 Fire Damage",
+        "start": 11,
+        "end": 15,
+        "name": "fire-damage"
+      },
+      {
+        "text": "11 to 15 Earth Damage",
+        "start": 11,
+        "end": 15,
+        "name": "earth-damage"
+      },
+      {
+        "text": "11 to 15 Neutral Damage",
+        "start": 11,
+        "end": 15,
+        "name": "neutral-damage"
+      },
+      {
+        "text": "11 to 15 Water Damage",
+        "start": 11,
+        "end": 15,
+        "name": "water-damage"
+      },
+      {
+        "text": "6 to 8% Earth Resistance",
+        "start": 6,
+        "end": 8,
+        "name": "earth-resistance"
+      },
+      { "text": "1 MP", "start": 1, "name": "mp" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 333
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15432-gein-belt",
+    "id": 15432,
+    "name": "Gein's Belt",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/10277.png",
+    "type": "Belt",
+    "description": "Gein actually uses this belt as pants, but it might be a bit tight on you.",
+    "effects": [
+      {
+        "text": "301 to 350 Vitality",
+        "start": 301,
+        "end": 350,
+        "name": "vitality"
+      },
+      {
+        "text": "41 to 60 Strength",
+        "start": 41,
+        "end": 60,
+        "name": "strength"
+      },
+      {
+        "text": "41 to 60 Intelligence",
+        "start": 41,
+        "end": 60,
+        "name": "intelligence"
+      },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      { "text": "7 to 10 Dodge", "start": 7, "end": 10, "name": "dodge" },
+      {
+        "text": "7 to 10 Fire Damage",
+        "start": 7,
+        "end": 10,
+        "name": "fire-damage"
+      },
+      {
+        "text": "7 to 10 Earth Damage",
+        "start": 7,
+        "end": 10,
+        "name": "earth-damage"
+      },
+      {
+        "text": "7 to 10 Neutral Damage",
+        "start": 7,
+        "end": 10,
+        "name": "neutral-damage"
+      },
+      {
+        "text": "11 to 15% Fire Resistance",
+        "start": 11,
+        "end": 15,
+        "name": "fire-resistance"
+      },
+      {
+        "text": "21 to 25 Critical Damage",
+        "start": 21,
+        "end": 25,
+        "name": "critical-damage"
+      },
+      { "text": "1 Range", "start": 1, "name": "range" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 343
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15440-rassler-ring",
+    "id": 15440,
+    "name": "Rassler Ring",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/9293.png",
+    "type": "Ring",
+    "description": "This ring is the only officially authorized weapon for Rasslin matches, and it leaves behind nice little imprints of a star.",
+    "effects": [
+      {
+        "text": "301 to 350 Vitality",
+        "start": 301,
+        "end": 350,
+        "name": "vitality"
+      },
+      {
+        "text": "31 to 50 Strength",
+        "start": 31,
+        "end": 50,
+        "name": "strength"
+      },
+      {
+        "text": "31 to 50 Intelligence",
+        "start": 31,
+        "end": 50,
+        "name": "intelligence"
+      },
+      { "text": "31 to 50 Agility", "start": 31, "end": 50, "name": "agility" },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      {
+        "text": "7 to 10 Fire Damage",
+        "start": 7,
+        "end": 10,
+        "name": "fire-damage"
+      },
+      {
+        "text": "7 to 10 Air Damage",
+        "start": 7,
+        "end": 10,
+        "name": "air-damage"
+      },
+      {
+        "text": "7 to 10 Earth Damage",
+        "start": 7,
+        "end": 10,
+        "name": "earth-damage"
+      },
+      {
+        "text": "7 to 10 Neutral Damage",
+        "start": 7,
+        "end": 10,
+        "name": "neutral-damage"
+      },
+      {
+        "text": "301 to 400 Initiative",
+        "start": 301,
+        "end": 400,
+        "name": "initiative"
+      },
+      { "text": "2 to 3% Critical", "start": 2, "end": 3, "name": "critical" },
+      {
+        "text": "-21 to -25 Critical Damage",
+        "start": -21,
+        "end": -25,
+        "name": "critical-damage"
+      }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 346
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15441-rassler-boots",
+    "id": 15441,
+    "name": "Rassler Boots",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/11267.png",
+    "type": "Boots",
+    "description": "The principal characteristic of these boots is that they make a lot of noise. Which is, of course, an important part of Rasslin, helping to keep the atmosphere high during matches.",
+    "effects": [
+      {
+        "text": "301 to 600 Initiative",
+        "start": 301,
+        "end": 600,
+        "name": "initiative"
+      },
+      {
+        "text": "351 to 400 Vitality",
+        "start": 351,
+        "end": 400,
+        "name": "vitality"
+      },
+      {
+        "text": "31 to 50 Strength",
+        "start": 31,
+        "end": 50,
+        "name": "strength"
+      },
+      {
+        "text": "31 to 50 Intelligence",
+        "start": 31,
+        "end": 50,
+        "name": "intelligence"
+      },
+      { "text": "31 to 50 Agility", "start": 31, "end": 50, "name": "agility" },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      {
+        "text": "9 to 12 Fire Damage",
+        "start": 9,
+        "end": 12,
+        "name": "fire-damage"
+      },
+      {
+        "text": "9 to 12 Air Damage",
+        "start": 9,
+        "end": 12,
+        "name": "air-damage"
+      },
+      {
+        "text": "9 to 12 Earth Damage",
+        "start": 9,
+        "end": 12,
+        "name": "earth-damage"
+      },
+      {
+        "text": "9 to 12 Neutral Damage",
+        "start": 9,
+        "end": 12,
+        "name": "neutral-damage"
+      },
+      { "text": "1 Summons", "start": 1, "name": "summons" },
+      { "text": "4 to 6% Critical", "start": 4, "end": 6, "name": "critical" },
+      { "text": "1 MP", "start": 1, "name": "mp" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 346
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15697-kapmeba",
+    "id": 15697,
+    "name": "Kapmeba",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/17330.png",
+    "type": "Cloak",
+    "description": "Made up, as it is, of little bits of Krobes, you'd better have a solid and healthy constitution if you're going to wear this cape. Otherwise it might make you a bit of a hypochondriac.",
+    "effects": [
+      {
+        "text": "351 to 400 Vitality",
+        "start": 351,
+        "end": 400,
+        "name": "vitality"
+      },
+      { "text": "51 to 70 Power", "start": 51, "end": 70, "name": "power" },
+      {
+        "text": "11 to 15 Fire Damage",
+        "start": 11,
+        "end": 15,
+        "name": "fire-damage"
+      },
+      {
+        "text": "11 to 15 Air Damage",
+        "start": 11,
+        "end": 15,
+        "name": "air-damage"
+      },
+      {
+        "text": "11 to 15 Earth Damage",
+        "start": 11,
+        "end": 15,
+        "name": "earth-damage"
+      },
+      {
+        "text": "11 to 15 Neutral Damage",
+        "start": 11,
+        "end": 15,
+        "name": "neutral-damage"
+      },
+      {
+        "text": "11 to 15 Water Damage",
+        "start": 11,
+        "end": 15,
+        "name": "water-damage"
+      },
+      {
+        "text": "5 to 7% Water Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "water-resistance"
+      },
+      {
+        "text": "-20 Critical Damage",
+        "start": -20,
+        "name": "critical-damage"
+      },
+      { "text": "1 Range", "start": 1, "name": "range" },
+      { "text": "1 MP", "start": 1, "name": "mp" },
+      { "text": "31 to 50 Wisdom", "start": 31, "end": 50, "name": "wisdom" }
+    ],
+    "characteristics": [],
+    "conditions": "AP < 12",
+    "set": null
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15699-belteen",
+    "id": 15699,
+    "name": "Belteen",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/10281.png",
+    "type": "Belt",
+    "description": "The Belteen is more suited to imposing physiques. But unlike other belts, this one inflates to squeeze its wearer, giving an illusion of more volume. It can also be used as a flotation device in the event of a water landing.",
+    "effects": [
+      {
+        "text": "301 to 350 Vitality",
+        "start": 301,
+        "end": 350,
+        "name": "vitality"
+      },
+      { "text": "31 to 50 Power", "start": 31, "end": 50, "name": "power" },
+      {
+        "text": "16 to 20 Pushback Resistance",
+        "start": 16,
+        "end": 20,
+        "name": "pushback-resistance"
+      },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      { "text": "-10 Dodge", "start": -10, "name": "dodge" },
+      {
+        "text": "7 to 10% Neutral Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "neutral-resistance"
+      },
+      {
+        "text": "7 to 10% Water Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "water-resistance"
+      },
+      { "text": "5 to 7 MP Parry", "start": 5, "end": 7, "name": "mp-parry" },
+      {
+        "text": "16 to 20 Critical Damage",
+        "start": 16,
+        "end": 20,
+        "name": "critical-damage"
+      },
+      { "text": "3 to 4% Critical", "start": 3, "end": 4, "name": "critical" },
+      { "text": "1 AP", "start": 1, "name": "ap" }
+    ],
+    "characteristics": [],
+    "conditions": "AP < 12",
+    "set": null
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15701-pawl-ouatnos-amulet",
+    "id": 15701,
+    "name": "Pawl Ouatnos' Amulet",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/1261.png",
+    "type": "Amulet",
+    "description": "The symbol of the Sea Chafer, this amulet is worn by its captain. It seems it allows him to communicate with powerful marine animals, even though the latter aren't too talkative.",
+    "effects": [
+      {
+        "text": "301 to 350 Vitality",
+        "start": 301,
+        "end": 350,
+        "name": "vitality"
+      },
+      { "text": "51 to 70 Power", "start": 51, "end": 70, "name": "power" },
+      {
+        "text": "21 to 25 Critical Resistance",
+        "start": 21,
+        "end": 25,
+        "name": "critical-resistance"
+      },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      {
+        "text": "5 to 7% Earth Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "earth-resistance"
+      },
+      {
+        "text": "5 to 7% Water Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "water-resistance"
+      },
+      { "text": "2 to 3% Critical", "start": 2, "end": 3, "name": "critical" },
+      { "text": "1 MP", "start": 1, "name": "mp" },
+      { "text": "1 AP", "start": 1, "name": "ap" }
+    ],
+    "characteristics": [],
+    "conditions": "AP < 12",
+    "set": null
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15737-owlmulet",
+    "id": 15737,
+    "name": "Owlmulet",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/1262.png",
+    "type": "Amulet",
+    "description": "You've heard that this amulet allows its wearer to turn his head 360° with a little practise. Then again, all the people that told you that are sadly no longer with us. You decide to keep turning around the old-fashioned way.",
+    "effects": [
+      {
+        "text": "301 to 350 Vitality",
+        "start": 301,
+        "end": 350,
+        "name": "vitality"
+      },
+      { "text": "41 to 60 Agility", "start": 41, "end": 60, "name": "agility" },
+      { "text": "31 to 50 Wisdom", "start": 31, "end": 50, "name": "wisdom" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      { "text": "-10 Lock", "start": -10, "name": "lock" },
+      {
+        "text": "11 to 15 Air Damage",
+        "start": 11,
+        "end": 15,
+        "name": "air-damage"
+      },
+      {
+        "text": "16 to 20 Pushback Damage",
+        "start": 16,
+        "end": 20,
+        "name": "pushback-damage"
+      },
+      {
+        "text": "7 to 10% Neutral Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "neutral-resistance"
+      },
+      {
+        "text": "5 to 7% Water Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "water-resistance"
+      },
+      {
+        "text": "4 to 5 MP Reduction",
+        "start": 4,
+        "end": 5,
+        "name": "mp-reduction"
+      },
+      { "text": "1 Range", "start": 1, "name": "range" },
+      { "text": "1 AP", "start": 1, "name": "ap" },
+      { "text": "3 to 4% Critical", "start": 3, "end": 4, "name": "critical" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 354
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15743-vortex-belt",
+    "id": 15743,
+    "name": "Vortex Belt",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/10282.png",
+    "type": "Belt",
+    "description": "Vortex hasn't been able to get this belt on for years. You'll probably go the same way, you know.",
+    "effects": [
+      {
+        "text": "301 to 350 Vitality",
+        "start": 301,
+        "end": 350,
+        "name": "vitality"
+      },
+      {
+        "text": "41 to 60 Intelligence",
+        "start": 41,
+        "end": 60,
+        "name": "intelligence"
+      },
+      { "text": "41 to 60 Agility", "start": 41, "end": 60, "name": "agility" },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      {
+        "text": "9 to 12 Fire Damage",
+        "start": 9,
+        "end": 12,
+        "name": "fire-damage"
+      },
+      {
+        "text": "9 to 12 Air Damage",
+        "start": 9,
+        "end": 12,
+        "name": "air-damage"
+      },
+      {
+        "text": "7 to 10% Water Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "water-resistance"
+      },
+      {
+        "text": "7 to 10% Fire Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "fire-resistance"
+      },
+      {
+        "text": "4 to 5 AP Reduction",
+        "start": 4,
+        "end": 5,
+        "name": "ap-reduction"
+      },
+      { "text": "9 to 12 Heals", "start": 9, "end": 12, "name": "heals" },
+      { "text": "3 to 4% Critical", "start": 3, "end": 4, "name": "critical" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 356
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15751-great-bootinis",
+    "id": 15751,
+    "name": "Great Bootinis",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/11280.png",
+    "type": "Boots",
+    "description": "Bootini was one of the finest magicians of all time, and yet fate has decided that he will be best known for sharing his name with these silly boots. (Just try and get out of them once they're on, though!)",
+    "effects": [
+      {
+        "text": "351 to 400 Vitality",
+        "start": 351,
+        "end": 400,
+        "name": "vitality"
+      },
+      {
+        "text": "31 to 50 Intelligence",
+        "start": 31,
+        "end": 50,
+        "name": "intelligence"
+      },
+      { "text": "31 to 50 Chance", "start": 31, "end": 50, "name": "chance" },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      {
+        "text": "16 to 20 Fire Damage",
+        "start": 16,
+        "end": 20,
+        "name": "fire-damage"
+      },
+      {
+        "text": "16 to 20 Water Damage",
+        "start": 16,
+        "end": 20,
+        "name": "water-damage"
+      },
+      {
+        "text": "16 to 20 Pushback Damage",
+        "start": 16,
+        "end": 20,
+        "name": "pushback-damage"
+      },
+      {
+        "text": "5 to 7% Earth Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "earth-resistance"
+      },
+      {
+        "text": "5 to 7% Neutral Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "neutral-resistance"
+      },
+      { "text": "1 Range", "start": 1, "name": "range" },
+      { "text": "1 MP", "start": 1, "name": "mp" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 358
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/17107-kongoku-earring",
+    "id": 17107,
+    "name": "Kongoku Earring",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/16478.png",
+    "type": "Hat",
+    "description": "This somewhat rebellious earring has an annoying tendency to change from the right ear to the left ear depending on which direction its wearer is looking.",
+    "effects": [
+      {
+        "text": "401 to 600 Initiative",
+        "start": 401,
+        "end": 600,
+        "name": "initiative"
+      },
+      {
+        "text": "301 to 350 Vitality",
+        "start": 301,
+        "end": 350,
+        "name": "vitality"
+      },
+      { "text": "21 to 30 Power", "start": 21, "end": 30, "name": "power" },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      { "text": "9 to 12 Lock", "start": 9, "end": 12, "name": "lock" },
+      {
+        "text": "7 to 10% Neutral Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "neutral-resistance"
+      },
+      {
+        "text": "7 to 10% Air Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "air-resistance"
+      },
+      {
+        "text": "5 to 7 MP Reduction",
+        "start": 5,
+        "end": 7,
+        "name": "mp-reduction"
+      },
+      { "text": "1 Summons", "start": 1, "name": "summons" },
+      { "text": "7 to 10% Critical", "start": 7, "end": 10, "name": "critical" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 384
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/17108-kongoku-belt",
+    "id": 17108,
+    "name": "Kongoku Belt",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/10296.png",
+    "type": "Belt",
+    "description": "Actually, Kongoku wears this belt on his wrists, which speaks volumes about the monster’s girth.",
+    "effects": [
+      {
+        "text": "401 to 600 Initiative",
+        "start": 401,
+        "end": 600,
+        "name": "initiative"
+      },
+      {
+        "text": "301 to 350 Vitality",
+        "start": 301,
+        "end": 350,
+        "name": "vitality"
+      },
+      { "text": "21 to 30 Power", "start": 21, "end": 30, "name": "power" },
+      {
+        "text": "11 to 15 Critical Resistance",
+        "start": 11,
+        "end": 15,
+        "name": "critical-resistance"
+      },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      { "text": "9 to 12 Lock", "start": 9, "end": 12, "name": "lock" },
+      {
+        "text": "5 to 7% Neutral Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "neutral-resistance"
+      },
+      {
+        "text": "5 to 7% Water Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "water-resistance"
+      },
+      {
+        "text": "5 to 7% Fire Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "fire-resistance"
+      },
+      {
+        "text": "5 to 7 MP Reduction",
+        "start": 5,
+        "end": 7,
+        "name": "mp-reduction"
+      },
+      { "text": "4 to 5% Critical", "start": 4, "end": 5, "name": "critical" },
+      { "text": "1 Range", "start": 1, "name": "range" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 384
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/17574-king-playa-signet-ring",
+    "id": 17574,
+    "name": "King Playa Signet Ring",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/9313.png",
+    "type": "Ring",
+    "description": "King Playa uses his Signet Ring to mark his victims. Now where could the wax that he uses for that come from…?",
+    "effects": [
+      {
+        "text": "201 to 250 Vitality",
+        "start": 201,
+        "end": 250,
+        "name": "vitality"
+      },
+      {
+        "text": "31 to 50 Strength",
+        "start": 31,
+        "end": 50,
+        "name": "strength"
+      },
+      {
+        "text": "31 to 50 Intelligence",
+        "start": 31,
+        "end": 50,
+        "name": "intelligence"
+      },
+      { "text": "31 to 40 Wisdom", "start": 31, "end": 40, "name": "wisdom" },
+      {
+        "text": "7 to 10 Prospecting",
+        "start": 7,
+        "end": 10,
+        "name": "prospecting"
+      },
+      { "text": "-5 Dodge", "start": -5, "name": "dodge" },
+      {
+        "text": "9 to 12 Fire Damage",
+        "start": 9,
+        "end": 12,
+        "name": "fire-damage"
+      },
+      {
+        "text": "9 to 12 Earth Damage",
+        "start": 9,
+        "end": 12,
+        "name": "earth-damage"
+      },
+      {
+        "text": "9 to 12 Neutral Damage",
+        "start": 9,
+        "end": 12,
+        "name": "neutral-damage"
+      },
+      {
+        "text": "7 to 10% Fire Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "fire-resistance"
+      },
+      {
+        "text": "4 to 6 MP Reduction",
+        "start": 4,
+        "end": 6,
+        "name": "mp-reduction"
+      },
+      { "text": "2 to 3% Critical", "start": 2, "end": 3, "name": "critical" },
+      { "text": "1 Range", "start": 1, "name": "range" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 402
+  },
+  {
+    "url": "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/17581-jammy-jack-collar",
+    "id": 17581,
+    "name": "Jammy Jack Collar",
+    "level": 200,
+    "imageUrl": "https://static.ankama.com/dofus/www/game/items/200/1278.png",
+    "type": "Amulet",
+    "description": "Don't forget to write your and your master's names on this collar. If you get lost, it could prove necessary so you can be given back to the right person.",
+    "effects": [
+      {
+        "text": "301 to 350 Vitality",
+        "start": 301,
+        "end": 350,
+        "name": "vitality"
+      },
+      { "text": "61 to 80 Agility", "start": 61, "end": 80, "name": "agility" },
+      {
+        "text": "16 to 20 Pushback Resistance",
+        "start": 16,
+        "end": 20,
+        "name": "pushback-resistance"
+      },
+      { "text": "31 to 50 Wisdom", "start": 31, "end": 50, "name": "wisdom" },
+      {
+        "text": "11 to 15 Prospecting",
+        "start": 11,
+        "end": 15,
+        "name": "prospecting"
+      },
+      {
+        "text": "16 to 20 Air Damage",
+        "start": 16,
+        "end": 20,
+        "name": "air-damage"
+      },
+      {
+        "text": "5 to 7% Water Resistance",
+        "start": 5,
+        "end": 7,
+        "name": "water-resistance"
+      },
+      {
+        "text": "7 to 10% Fire Resistance",
+        "start": 7,
+        "end": 10,
+        "name": "fire-resistance"
+      },
+      { "text": "5 to 7 MP Parry", "start": 5, "end": 7, "name": "mp-parry" },
+      { "text": "-5% Critical", "start": -5, "name": "critical" },
+      { "text": "1 Range", "start": 1, "name": "range" },
+      { "text": "1 AP", "start": 1, "name": "ap" }
+    ],
+    "characteristics": [],
+    "conditions": null,
+    "set": 405
+  }
+]
