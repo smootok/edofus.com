@@ -11,7 +11,7 @@ const useStyle = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     maxWidth: 500,
-    margin: 'auto',
+    margin: `${theme.spacing(10)}px auto ${theme.spacing(4)}px`,
     border: '1px solid transparent',
     '&:hover': {
       borderColor: theme.palette.primary.main

@@ -3,6 +3,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
 import Drawer from '../drawer/drawer'
+import config from '../drawer/drawer.config'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,7 +19,7 @@ const Layout = ({ children }) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Drawer />
+      <Drawer config={config} />
       <main className={classes.content}>{children}</main>
     </div>
   )

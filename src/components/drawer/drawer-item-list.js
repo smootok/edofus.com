@@ -3,7 +3,7 @@ import { List } from '@material-ui/core'
 
 import DrawerItem from './drawer-item'
 
-const DrawerList = ({ items, selectedItem, setSelectedItem }) => {
+const DrawerItemList = ({ items, selectedItem, setSelectedItem }) => {
   return (
     <List>
       {items.map(({ name, icon }) => (
@@ -19,4 +19,4 @@ const DrawerList = ({ items, selectedItem, setSelectedItem }) => {
   )
 }
 
-export default DrawerList
+export default DrawerItemList

@@ -1,10 +1,14 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { ListItemIcon, ListItemText, ListItem } from '@material-ui/core'
+import {
+  ListItemIcon as ItemIcon,
+  ListItemText as ItemText,
+  ListItem as Item
+} from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   active: {
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    backgroundColor: theme.palette.action.selected,
     color: theme.palette.primary.main
   }
 }))
@@ -12,17 +16,17 @@ const useStyles = makeStyles(theme => ({
 const DrawerItem = ({ name, icon, selectedItem, setSelectedItem }) => {
   const classes = useStyles()
   return (
-    <ListItem
+    <Item
       className={selectedItem === name ? classes.active : ''}
       button
       key={name}
       onClick={() => setSelectedItem(name)}
     >
-      <ListItemIcon>
+      <ItemIcon>
         <img style={{ width: '34px', height: '34px' }} src={icon} alt={name} />
-      </ListItemIcon>
-      <ListItemText primary={name} />
-    </ListItem>
+      </ItemIcon>
+      <ItemText primary={name} />
+    </Item>
   )
 }
 
