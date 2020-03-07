@@ -3,17 +3,11 @@ import { List } from '@material-ui/core'
 
 import DrawerItem from './drawer-item'
 
-const DrawerItemList = ({ items, selectedItem, setSelectedItem }) => {
+const DrawerItemList = ({ items }) => {
   return (
     <List>
-      {items.map(({ name, icon }) => (
-        <DrawerItem
-          key={name}
-          name={name}
-          icon={icon}
-          setSelectedItem={setSelectedItem}
-          selectedItem={selectedItem}
-        />
+      {items.map(item => (
+        <DrawerItem key={item.name} {...item} />
       ))}
     </List>
   )

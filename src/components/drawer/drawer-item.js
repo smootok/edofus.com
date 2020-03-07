@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   ListItemIcon as ItemIcon,
@@ -7,26 +8,37 @@ import {
 } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
+  icon: {
+    width: 30,
+    height: 30
+  },
+  link: {
+    textDecoration: 'none',
+    color: 'inherit'
+  },
   active: {
     backgroundColor: theme.palette.action.selected,
     color: theme.palette.primary.main
   }
 }))
 
-const DrawerItem = ({ name, icon, selectedItem, setSelectedItem }) => {
+const DrawerItem = ({ name, icon, link }) => {
   const classes = useStyles()
+  const { pathname } = useLocation()
+
   return (
-    <Item
-      className={selectedItem === name ? classes.active : ''}
-      button
-      key={name}
-      onClick={() => setSelectedItem(name)}
-    >
-      <ItemIcon>
-        <img style={{ width: '34px', height: '34px' }} src={icon} alt={name} />
-      </ItemIcon>
-      <ItemText primary={name} />
-    </Item>
+    <Link to={link} className={classes.link}>
+      <Item
+        key={name}
+        className={link === pathname ? classes.active : ''}
+        button
+      >
+        <ItemIcon>
+          <img className={classes.icon} src={icon} alt={name} />
+        </ItemIcon>
+        <ItemText primary={name} />
+      </Item>
+    </Link>
   )
 }
 
