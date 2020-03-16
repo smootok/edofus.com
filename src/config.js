@@ -1,3 +1,3 @@
-exports.baseApiUrl = 'http://api.edofus.com/api/v1'
+exports.baseApiUrl = 'https://api.edofus.com/api/v1'
 
-exports.imagesBaseUrl = 'http://api.edofus.com/images'
+exports.imagesBaseUrl = 'https://api.edofus.com/images'
