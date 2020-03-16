@@ -31,13 +31,18 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EncyclopediaCard = ({ id, name, type, level, effects }) => {
+const EncyclopediaCard = ({ itemId, name, type, level, effects }) => {
   const classes = useStyles()
 
   return (
     <Grid className={classes.root} item xs={12} sm={12} md={6} lg={4} xl={3}>
       <Paper className={classes.paper}>
-        <EncyclopediaCardHeader id={id} name={name} type={type} level={level} />
+        <EncyclopediaCardHeader
+          itemId={itemId}
+          name={name}
+          type={type}
+          level={level}
+        />
 
         <Divider className={classes.divider} />
 

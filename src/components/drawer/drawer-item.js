@@ -22,10 +22,13 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const DrawerItem = ({ name, icon, link }) => {
+const DrawerItem = ({ item, setCurrentPage }) => {
   const classes = useStyles()
   const { pathname } = useLocation()
-
+  const { name, link, icon } = item
+  if (link === pathname) {
+    setCurrentPage(item)
+  }
   return (
     <Link to={link} className={classes.link}>
       <Item

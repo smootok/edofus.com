@@ -2,6 +2,9 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
+import { imagesBaseUrl } from '../../config'
+import { useParams } from 'react-router-dom'
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -26,9 +29,9 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EncyclopediaCardHeader = ({ id, name, type, level }) => {
+const EncyclopediaCardHeader = ({ itemId, name, type, level }) => {
   const classes = useStyles()
-
+  const { type: encyclopediaType } = useParams()
   return (
     <div className={classes.root}>
       <div className={classes.subtitles}>
@@ -40,7 +43,10 @@ const EncyclopediaCardHeader = ({ id, name, type, level }) => {
         </Typography>
       </div>
       <div className={classes.imageBox}>
-        <img src={`/images/${id}.png`} alt='img' />
+        <img
+          src={`${imagesBaseUrl}/${encyclopediaType}/${itemId}.png`}
+          alt='img'
+        />
       </div>
     </div>
   )

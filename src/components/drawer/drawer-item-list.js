@@ -3,11 +3,15 @@ import { List } from '@material-ui/core'
 
 import DrawerItem from './drawer-item'
 
-const DrawerItemList = ({ items }) => {
+const DrawerItemList = ({ items, setCurrentPage }) => {
   return (
     <List>
       {items.map(item => (
-        <DrawerItem key={item.name} {...item} />
+        <DrawerItem
+          key={item.name}
+          item={item}
+          setCurrentPage={setCurrentPage}
+        />
       ))}
     </List>
   )
