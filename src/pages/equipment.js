@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography, CircularProgress } from '@material-ui/core'
 
@@ -16,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   loading: {
     display: 'flex',
     justifyContent: 'center',
-    margin: theme.spacing(4)
+    marginTop: theme.spacing(4)
   },
   error: {
     color: theme.palette.error.main,
@@ -27,11 +26,10 @@ const useStyles = makeStyles(theme => ({
 
 const Encyclopedia = () => {
   const classes = useStyles()
-  const { type } = useParams()
-  const url = `${baseApiUrl}/encyclopedia/${type}`
+  const url = `${baseApiUrl}/encyclopedia/equipment`
   const [{ data, isLoading, isError }, setParams] = useApiData(url)
 
-  function handleScroll () {
+  const handleScroll = () => {
     if (
       isLoading ||
       window.innerHeight + document.documentElement.scrollTop !==
@@ -44,19 +42,25 @@ const Encyclopedia = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll) // eslint-disable-next-line
   }, [])
 
   return (
     <Layout>
       <div className={classes.root}>
-        <EncyclopediaSearch />
-        <EncyclopediaCardList data={data} />
+        <EncyclopediaSearch
+          setParams={setParams}
+          encyclopediaType='equipment'
+        />
+
+        <EncyclopediaCardList encyclopediaType='equipment' data={data} />
+
         {isLoading && (
           <div className={classes.loading}>
             <CircularProgress />
           </div>
         )}
+
         {isError && (
           <div className={classes.error}>
             <Typography className={classes.error}>

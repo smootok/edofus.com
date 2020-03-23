@@ -11,8 +11,14 @@ const useApiData = url => {
       setIsError(false)
       setIsLoading(true)
       try {
+        const isNew = params.isNew
+        delete params.isNew
         const result = await axios(url, { params })
-        setData(data => [...data, ...result.data.data])
+        if (isNew) {
+          setData(result.data.data)
+        } else {
+          setData(data => [...data, ...result.data.data])
+        }
       } catch (error) {
         setIsError(true)
       }

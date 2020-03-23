@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
 import { imagesBaseUrl } from '../../config'
-import { useParams } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,9 +28,9 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EncyclopediaCardHeader = ({ itemId, name, type, level }) => {
+const EncyclopediaCardHeader = ({ itemId, name, type, level, encyclopediaType }) => {
   const classes = useStyles()
-  const { type: encyclopediaType } = useParams()
+
   return (
     <div className={classes.root}>
       <div className={classes.subtitles}>

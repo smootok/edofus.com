@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EncyclopediaCard = ({ itemId, name, type, level, effects }) => {
+const EncyclopediaCard = ({ itemId, name, type, level, effects, encyclopediaType }) => {
   const classes = useStyles()
 
   return (
@@ -42,6 +42,7 @@ const EncyclopediaCard = ({ itemId, name, type, level, effects }) => {
           name={name}
           type={type}
           level={level}
+          encyclopediaType={encyclopediaType}
         />
 
         <Divider className={classes.divider} />

@@ -4,12 +4,12 @@ import { Grid } from '@material-ui/core'
 
 import EncyclopediaCard from './encyclopedia-card'
 
-const EncyclopediaCardList = ({ data }) => {
+const EncyclopediaCardList = ({ data, encyclopediaType }) => {
   return (
     <div>
       <Grid container spacing={6}>
         {data.map(item => (
-          <EncyclopediaCard key={item._id} {...item} />
+          <EncyclopediaCard encyclopediaType={encyclopediaType} key={item._id} {...item} />
         ))}
       </Grid>
     </div>
