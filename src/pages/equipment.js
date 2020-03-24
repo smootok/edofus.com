@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 const Encyclopedia = () => {
   const classes = useStyles()
   const url = `${baseApiUrl}/encyclopedia/equipment`
-  const [{ data, isLoading, isError }, setParams] = useApiData(url)
+  const [{ data, isLoading, isError }, setParams] = useApiData(url, { page: 1 })
 
   const handleScroll = () => {
     if (

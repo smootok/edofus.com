@@ -9,7 +9,10 @@ import {
   DialogTitle,
   DialogActions,
   DialogContent,
-  Typography
+  Select,
+  InputLabel,
+  FormControl,
+  TextField
 } from '@material-ui/core'
 import {
   Search as SearchIcon,
@@ -18,6 +21,8 @@ import {
 } from '@material-ui/icons'
 
 import dofusIcon from '../../assets/icons/dofus.png'
+import { baseApiUrl } from '../../config'
+import useApiData from '../../hooks/use-api-data'
 
 const useStyle = makeStyles(theme => ({
   root: {
@@ -60,7 +65,7 @@ const useStyle = makeStyles(theme => ({
     cursor: 'pointer'
   },
   iconFilter: {
-    '&:hover': {
+    '&:hover, &.active': {
       backgroundColor: theme.palette.primary.main
     }
   },
@@ -68,24 +73,79 @@ const useStyle = makeStyles(theme => ({
     '&:hover': {
       backgroundColor: theme.palette.error.main
     }
+  },
+  type: {
+    marginRight: theme.spacing(2)
   }
 }))
 
 const EncyclopediaSearch = ({ encyclopediaType, setParams }) => {
+  const initState = {
+    name: '',
+    type: '',
+    'level[lte]': ''
+  }
   const classes = useStyle()
   const [open, setOpen] = React.useState(false)
-  const [name, setName] = React.useState('')
+  const [state, setState] = React.useState({ ...initState })
+  const [isSubmit, setIsSubmit] = React.useState(false)
+  const [isFilterActive, setIsFilterActive] = React.useState(false)
+  const typesUrl = `${baseApiUrl}/encyclopedia/equipment/types`
+  const [{ data: types }] = useApiData(typesUrl)
+
   const handleClickOpen = () => {
     setOpen(true)
   }
+
   const handleClose = () => {
     setOpen(false)
   }
 
+  const handleChange = e => {
+    const { name, value } = e.target
+    setState(params => ({ ...params, [name]: value }))
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
-    setParams(params => ({ name, page: 1, isNew: true }))
+    setState(state => ({ ...initState, name: state.name }))
+    setIsSubmit(true)
   }
+
+  const handleAdvancedSubmit = e => {
+    e.preventDefault()
+    setOpen(false)
+    setState(state => ({ ...state, name: '' }))
+    setIsSubmit(true)
+  }
+
+  const handleAdvancedCancel = e => {
+    setState({ ...initState })
+    setOpen(false)
+    setIsSubmit(true)
+  }
+
+  const handleReset = e => {
+    setState({ ...initState })
+    setIsSubmit(true)
+  }
+
+  React.useEffect(() => {
+    if (isSubmit === true) {
+      setParams({ ...state, page: 1, isNew: true })
+      setIsSubmit(false)
+    }
+  }, [isSubmit])
+
+  React.useEffect(() => {
+    for (const key in state) {
+      if (key !== 'name' && state[key] !== '') {
+        setIsFilterActive(true)
+        return
+      }
+    }
+    setIsFilterActive(false)
+  }, [state])
 
   return (
     <>
@@ -100,8 +160,10 @@ const EncyclopediaSearch = ({ encyclopediaType, setParams }) => {
           <InputBase
             className={classes.input}
             placeholder={`Search in ${encyclopediaType}`}
-            value={name}
-            onChange={e => setName(e.target.value)}
+            value={state.name}
+            name='name'
+            onChange={handleChange}
+            autoComplete='off'
           />
           <IconButton
             type='submit'
@@ -112,12 +174,17 @@ const EncyclopediaSearch = ({ encyclopediaType, setParams }) => {
           </IconButton>
         </Paper>
         <div
-          className={`${classes.iconControl} ${classes.iconFilter}`}
+          className={`${classes.iconControl} ${classes.iconFilter} ${
+            isFilterActive ? 'active' : ''
+          }`}
           onClick={handleClickOpen}
         >
           <FilterIcon />
         </div>
-        <div className={`${classes.iconControl} ${classes.iconReset}`}>
+        <div
+          className={`${classes.iconControl} ${classes.iconReset}`}
+          onClick={handleReset}
+        >
           <ResetIcon />
         </div>
       </div>
@@ -126,31 +193,58 @@ const EncyclopediaSearch = ({ encyclopediaType, setParams }) => {
         aria-labelledby='customized-dialog-title'
         open={open}
       >
-        <DialogTitle id='customized-dialog-title' onClose={handleClose}>
-          Modal title
-        </DialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose} color='primary'>
-            Save changes
-          </Button>
-        </DialogActions>
+        <form autoComplete='off'>
+          <DialogTitle id='customized-dialog-title' onClose={handleClose}>
+            Advanced Search
+          </DialogTitle>
+          <DialogContent dividers>
+            <FormControl variant='outlined' className={classes.type}>
+              <InputLabel htmlFor='types-select'>Type</InputLabel>
+              <Select
+                native
+                value={state.type}
+                onChange={handleChange}
+                label='Types'
+                inputProps={{
+                  name: 'type',
+                  id: 'types-select'
+                }}
+              >
+                <option aria-label='None' value='' />
+                {types.map(type => (
+                  <option key={type} value={type}>
+                    {type}
+                  </option>
+                ))}
+              </Select>
+            </FormControl>
+            <TextField
+              className={classes.level}
+              onChange={handleChange}
+              value={state['level[lte]']}
+              min='1'
+              max='200'
+              id='outlined-basic'
+              type='number'
+              label='Level'
+              variant='outlined'
+              name='level[lte]'
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button autoFocus onClick={handleAdvancedCancel} color='primary'>
+              Cancel
+            </Button>
+            <Button
+              autoFocus
+              onClick={handleAdvancedSubmit}
+              color='primary'
+              type='submit'
+            >
+              <SearchIcon /> Search
+            </Button>
+          </DialogActions>
+        </form>
       </Dialog>
     </>
   )

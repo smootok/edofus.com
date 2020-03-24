@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const useApiData = url => {
+const useApiData = (url, initParams = {}) => {
   const [data, setData] = useState([])
-  const [params, setParams] = useState({ page: 1 })
+  const [params, setParams] = useState(initParams)
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
   useEffect(() => {
