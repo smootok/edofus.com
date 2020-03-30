@@ -3,7 +3,7 @@ import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
 import caracs from '../../assets/caracs.png'
-import effects from '../../utils/encyclopedia-effects'
+import effects from './encyclopedia-effects.config'
 
 const effectStyles = (theme, effects) => {
   const styles = {

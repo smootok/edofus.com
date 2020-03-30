@@ -1,19 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import {
-  Paper,
-  InputBase,
-  IconButton,
-  Button,
-  Dialog,
-  DialogTitle,
-  DialogActions,
-  DialogContent,
-  Select,
-  InputLabel,
-  FormControl,
-  TextField
-} from '@material-ui/core'
+import { Paper, InputBase, IconButton } from '@material-ui/core'
 import {
   Search as SearchIcon,
   Clear as ResetIcon,
@@ -21,10 +8,10 @@ import {
 } from '@material-ui/icons'
 
 import dofusIcon from '../../assets/icons/dofus.png'
-import { baseApiUrl } from '../../config'
-import useApiData from '../../hooks/use-api-data'
+import EncyclopediaSearchFilter from './encyclopedia-search-filter'
+import { removeEmptyParams } from '../../utils/utils'
 
-const useStyle = makeStyles(theme => ({
+const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexDirection: 'row',
@@ -73,27 +60,15 @@ const useStyle = makeStyles(theme => ({
     '&:hover': {
       backgroundColor: theme.palette.error.main
     }
-  },
-  type: {
-    marginRight: theme.spacing(2)
   }
 }))
 
 const EncyclopediaSearch = ({ encyclopediaType, setParams }) => {
-  const initState = {
-    name: '',
-    type: '',
-    'level[lte]': ''
-  }
-  const classes = useStyle()
+  const classes = useStyles()
   const [open, setOpen] = React.useState(false)
-  const [state, setState] = React.useState({ ...initState })
-  const [isSubmit, setIsSubmit] = React.useState(false)
-  const [isFilterActive, setIsFilterActive] = React.useState(false)
-  const typesUrl = `${baseApiUrl}/encyclopedia/equipment/types`
-  const [{ data: types }] = useApiData(typesUrl)
+  const [name, setName] = React.useState('')
 
-  const handleClickOpen = () => {
+  const handleOpen = () => {
     setOpen(true)
   }
 
@@ -101,51 +76,16 @@ const EncyclopediaSearch = ({ encyclopediaType, setParams }) => {
     setOpen(false)
   }
 
-  const handleChange = e => {
-    const { name, value } = e.target
-    setState(params => ({ ...params, [name]: value }))
+  const handleNameChange = e => {
+    const { value } = e.target
+    setName(value)
   }
 
   const handleSubmit = e => {
     e.preventDefault()
-    setState(state => ({ ...initState, name: state.name }))
-    setIsSubmit(true)
+    const params = removeEmptyParams({ name, page: 1, isNew: true })
+    setParams(params)
   }
-
-  const handleAdvancedSubmit = e => {
-    e.preventDefault()
-    setOpen(false)
-    setState(state => ({ ...state, name: '' }))
-    setIsSubmit(true)
-  }
-
-  const handleAdvancedCancel = e => {
-    setState({ ...initState })
-    setOpen(false)
-    setIsSubmit(true)
-  }
-
-  const handleReset = e => {
-    setState({ ...initState })
-    setIsSubmit(true)
-  }
-
-  React.useEffect(() => {
-    if (isSubmit === true) {
-      setParams({ ...state, page: 1, isNew: true })
-      setIsSubmit(false)
-    }
-  }, [isSubmit])
-
-  React.useEffect(() => {
-    for (const key in state) {
-      if (key !== 'name' && state[key] !== '') {
-        setIsFilterActive(true)
-        return
-      }
-    }
-    setIsFilterActive(false)
-  }, [state])
 
   return (
     <>
@@ -160,9 +100,9 @@ const EncyclopediaSearch = ({ encyclopediaType, setParams }) => {
           <InputBase
             className={classes.input}
             placeholder={`Search in ${encyclopediaType}`}
-            value={state.name}
+            value={name}
             name='name'
-            onChange={handleChange}
+            onChange={handleNameChange}
             autoComplete='off'
           />
           <IconButton
@@ -174,78 +114,21 @@ const EncyclopediaSearch = ({ encyclopediaType, setParams }) => {
           </IconButton>
         </Paper>
         <div
-          className={`${classes.iconControl} ${classes.iconFilter} ${
-            isFilterActive ? 'active' : ''
-          }`}
-          onClick={handleClickOpen}
+          className={`${classes.iconControl} ${classes.iconFilter}`}
+          onClick={handleOpen}
         >
           <FilterIcon />
         </div>
-        <div
-          className={`${classes.iconControl} ${classes.iconReset}`}
-          onClick={handleReset}
-        >
+        <div className={`${classes.iconControl} ${classes.iconReset}`}>
           <ResetIcon />
         </div>
+        <EncyclopediaSearchFilter
+          open={open}
+          setOpen={setOpen}
+          handleClose={handleClose}
+          setParams={setParams}
+        />
       </div>
-      <Dialog
-        onClose={handleClose}
-        aria-labelledby='customized-dialog-title'
-        open={open}
-      >
-        <form autoComplete='off'>
-          <DialogTitle id='customized-dialog-title' onClose={handleClose}>
-            Advanced Search
-          </DialogTitle>
-          <DialogContent dividers>
-            <FormControl variant='outlined' className={classes.type}>
-              <InputLabel htmlFor='types-select'>Type</InputLabel>
-              <Select
-                native
-                value={state.type}
-                onChange={handleChange}
-                label='Types'
-                inputProps={{
-                  name: 'type',
-                  id: 'types-select'
-                }}
-              >
-                <option aria-label='None' value='' />
-                {types.map(type => (
-                  <option key={type} value={type}>
-                    {type}
-                  </option>
-                ))}
-              </Select>
-            </FormControl>
-            <TextField
-              className={classes.level}
-              onChange={handleChange}
-              value={state['level[lte]']}
-              min='1'
-              max='200'
-              id='outlined-basic'
-              type='number'
-              label='Level'
-              variant='outlined'
-              name='level[lte]'
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button autoFocus onClick={handleAdvancedCancel} color='primary'>
-              Cancel
-            </Button>
-            <Button
-              autoFocus
-              onClick={handleAdvancedSubmit}
-              color='primary'
-              type='submit'
-            >
-              <SearchIcon /> Search
-            </Button>
-          </DialogActions>
-        </form>
-      </Dialog>
     </>
   )
 }
