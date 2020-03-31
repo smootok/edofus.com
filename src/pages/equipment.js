@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography, CircularProgress } from '@material-ui/core'
 
 import Layout from '../components/layout/layout'
-import EncyclopediaSearch from '../components/encyclopedia/encyclopedia-search'
-import EncyclopediaCardList from '../components/encyclopedia/encyclopedia-card-list'
-import { baseApiUrl } from '../config'
+import EquipmentSearch from '../components/equipment/equipment-search'
+import EquipmentCardList from '../components/equipment/equipment-card-list'
+import { apiBaseUrl } from '../config'
 import useApiData from '../hooks/use-api-data'
 
 const useStyles = makeStyles(theme => ({
@@ -24,10 +24,10 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Encyclopedia = () => {
+const Equipment = () => {
   const classes = useStyles()
-  const url = `${baseApiUrl}/encyclopedia/equipment`
-  const [{ data, isLoading, isError }, setParams] = useApiData(url, { page: 1 })
+  const url = `${apiBaseUrl}/encyclopedia/equipment`
+  const [{ data, isLoading, isError }, setFetchParams] = useApiData(url, { page: 1 })
 
   const handleScroll = () => {
     if (
@@ -37,10 +37,10 @@ const Encyclopedia = () => {
     ) {
       return
     }
-    setParams(params => ({ ...params, page: params.page + 1 }))
+    setFetchParams(params => ({ ...params, page: params.page + 1 }))
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll) // eslint-disable-next-line
   }, [])
@@ -48,12 +48,11 @@ const Encyclopedia = () => {
   return (
     <Layout>
       <div className={classes.root}>
-        <EncyclopediaSearch
-          setParams={setParams}
-          encyclopediaType='equipment'
+        <EquipmentSearch
+          setFetchParams={setFetchParams}
         />
 
-        <EncyclopediaCardList encyclopediaType='equipment' data={data} />
+        <EquipmentCardList equipments={data} />
 
         {isLoading && (
           <div className={classes.loading}>
@@ -73,4 +72,4 @@ const Encyclopedia = () => {
   )
 }
 
-export default Encyclopedia
+export default Equipment

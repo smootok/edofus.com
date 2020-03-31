@@ -16,10 +16,7 @@ import {
 import { Autocomplete } from '@material-ui/lab'
 import { Search as SearchIcon, Close as CloseIcon } from '@material-ui/icons'
 
-import { baseApiUrl } from '../../config'
-import useApiData from '../../hooks/use-api-data'
-import effectsConfig from './encyclopedia-effects.config'
-import { removeEmptyParams } from '../../utils/utils'
+import { effectsConfig } from './equipment.config'
 
 const styles = theme => ({
   root: {
@@ -84,51 +81,20 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EncyclopediaSearchFilter = ({
+const EquipmentSearchFilter = ({
   open,
-  setOpen,
   handleClose,
-  setParams: setFetchParams
+  params,
+  types,
+  selectedEffects,
+  handleLevelChange,
+  handleTypesChange,
+  handleEffectsChange,
+  handleFilterSubmit
 }) => {
   const classes = useStyles()
-  const [params, setParams] = React.useState({
-    'level[gte]': '',
-    'level[lte]': '',
-    'type[in]': [],
-    'effects.name[all]': []
-  })
-  const [types, setTypes] = React.useState({})
-  const [effects, setEffects] = React.useState([])
-  const [{ data: typesData }] = useApiData(
-    `${baseApiUrl}/encyclopedia/equipment/types`
-  )
 
-  const handleLevelChange = e => {
-    const { name, value } = e.target
-    setParams(params => ({ ...params, [name]: value }))
-  }
-
-  const handleTypesChange = e => {
-    const { name, checked } = e.target
-    setTypes(types => ({ ...types, [name]: checked }))
-  }
-
-  const handleEffectsChange = (e, options) => {
-    setParams(params => ({
-      ...params,
-      'effects.name[all]': options.map(option => option.name)
-    }))
-    setEffects(options)
-  }
-
-  const handleSubmit = e => {
-    e.preventDefault()
-    const p = removeEmptyParams({ ...params })
-    setFetchParams({ ...p, page: 1, isNew: true })
-    setOpen(false)
-  }
-
-  const getEffects = effectsConfig => {
+  const effects = (effectsConfig => {
     const effects = []
     for (const key in effectsConfig) {
       for (const effect of effectsConfig[key]) {
@@ -136,28 +102,11 @@ const EncyclopediaSearchFilter = ({
       }
     }
     return effects
-  }
-
-  React.useEffect(() => {
-    const stateTypes = {}
-    for (const type of typesData) {
-      stateTypes[type] = false
-    }
-    setTypes({ ...stateTypes })
-  }, [typesData])
-
-  React.useEffect(() => {
-    setParams(params => ({
-      ...params,
-      'type[in]': Object.keys(types).filter(type => types[type] === true)
-    }))
-  }, [types])
+  })(effectsConfig)
 
   return (
     <Dialog className={classes.root} onClose={handleClose} open={open}>
-      <DialogTitle id='customized-dialog-title' onClose={handleClose}>
-        Advanced Search
-      </DialogTitle>
+      <DialogTitle onClose={handleClose}>Advanced Search</DialogTitle>
       <DialogContent dividers>
         <div className={classes.title}>Level</div>
         <div className={classes.level}>
@@ -201,8 +150,8 @@ const EncyclopediaSearchFilter = ({
           <Autocomplete
             multiple
             onChange={handleEffectsChange}
-            options={getEffects(effectsConfig)}
-            value={effects}
+            value={selectedEffects}
+            options={effects}
             getOptionLabel={option => option.text}
             renderInput={params => (
               <TextField {...params} variant='outlined' label='Effects' />
@@ -211,7 +160,7 @@ const EncyclopediaSearchFilter = ({
         </div>
       </DialogContent>
       <DialogActions>
-        <Button type='submit' color='primary' onClick={handleSubmit}>
+        <Button type='submit' color='primary' onClick={handleFilterSubmit}>
           <SearchIcon /> Search
         </Button>
       </DialogActions>
@@ -219,4 +168,4 @@ const EncyclopediaSearchFilter = ({
   )
 }
 
-export default EncyclopediaSearchFilter
+export default EquipmentSearchFilter

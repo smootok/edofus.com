@@ -1,4 +1,4 @@
-const effects = {
+export const effectsConfig = {
   common: [
     {
       name: 'vitality',
@@ -407,5 +407,3 @@ const effects = {
     }
   ]
 }
-
-export default effects

@@ -1,7 +1,5 @@
 import equipmentsIcon from '../../assets/icons/equipments.png'
 import weaponsIcon from '../../assets/icons/weapons.png'
-import setsIcon from '../../assets/icons/sets.png'
-import classesIcon from '../../assets/icons/classes.png'
 import createStuffIcon from '../../assets/icons/create-stuff.png'
 import myStuffsIcon from '../../assets/icons/my-stuffs.png'
 import HomeIcon from '../../assets/icons/dofus.png'
@@ -29,16 +27,6 @@ const config = [
         name: 'Weapons',
         link: '/encyclopedia/weapons',
         icon: weaponsIcon
-      },
-      {
-        name: 'Set',
-        link: '/encyclopedia/set',
-        icon: setsIcon
-      },
-      {
-        name: 'Classes',
-        link: '/encyclopedia/classes',
-        icon: classesIcon
       }
     ]
   },

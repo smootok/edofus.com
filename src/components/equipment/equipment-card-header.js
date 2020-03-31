@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EncyclopediaCardHeader = ({ itemId, name, type, level, encyclopediaType }) => {
+const EquipmentCardHeader = ({ itemId, name, type, level }) => {
   const classes = useStyles()
 
   return (
@@ -43,7 +43,7 @@ const EncyclopediaCardHeader = ({ itemId, name, type, level, encyclopediaType })
       </div>
       <div className={classes.imageBox}>
         <img
-          src={`${imagesBaseUrl}/${encyclopediaType}/${itemId}.png`}
+          src={`${imagesBaseUrl}/encyclopedia/equipment/${itemId}.png`}
           alt='img'
         />
       </div>
@@ -51,4 +51,4 @@ const EncyclopediaCardHeader = ({ itemId, name, type, level, encyclopediaType })
   )
 }
 
-export default EncyclopediaCardHeader
+export default EquipmentCardHeader
