@@ -2,9 +2,9 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Paper, Grid, Divider } from '@material-ui/core'
 
-import EquipmentCardHeader from './equipment-card-header'
-import EquipmentCardBody from './equipment-card-body'
-import EquipmentCardFooter from './equipment-card-footer'
+import ItemCardHeader from './item-card-header'
+import ItemCardBody from './item-card-body'
+import ItemCardFooter from './item-card-footer'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -31,29 +31,24 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EquipmentCard = ({ itemId, name, type, level, effects }) => {
+const ItemCard = ({ itemId, name, type, level, effects }) => {
   const classes = useStyles()
 
   return (
     <Grid className={classes.root} item xs={12} sm={12} md={6} lg={4} xl={3}>
       <Paper className={classes.paper}>
-        <EquipmentCardHeader
-          itemId={itemId}
-          name={name}
-          type={type}
-          level={level}
-        />
+        <ItemCardHeader itemId={itemId} name={name} type={type} level={level} />
 
         <Divider className={classes.divider} />
 
-        <EquipmentCardBody effects={effects} />
+        <ItemCardBody effects={effects} />
 
         <Divider className={classes.divider} />
 
-        <EquipmentCardFooter />
+        <ItemCardFooter />
       </Paper>
     </Grid>
   )
 }
 
-export default EquipmentCard
+export default ItemCard

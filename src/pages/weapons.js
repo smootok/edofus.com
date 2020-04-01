@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Equipment = () => {
+const Weapons = () => {
   const classes = useStyles()
   const { pathname } = useLocation()
   const url = `${apiBaseUrl}${pathname}`
@@ -74,4 +74,4 @@ const Equipment = () => {
   )
 }
 
-export default Equipment
+export default Weapons

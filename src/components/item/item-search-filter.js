@@ -16,7 +16,7 @@ import {
 import { Autocomplete } from '@material-ui/lab'
 import { Search as SearchIcon, Close as CloseIcon } from '@material-ui/icons'
 
-import { effectsConfig } from './equipment.config'
+import { effectsConfig } from './item.config'
 
 const styles = theme => ({
   root: {
@@ -81,7 +81,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EquipmentSearchFilter = ({
+const ItemSearchFilter = ({
   open,
   handleClose,
   params,
@@ -168,4 +168,4 @@ const EquipmentSearchFilter = ({
   )
 }
 
-export default EquipmentSearchFilter
+export default ItemSearchFilter

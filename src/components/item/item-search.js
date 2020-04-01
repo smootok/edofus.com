@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import { Paper, InputBase, IconButton } from '@material-ui/core'
 import {
@@ -8,7 +9,7 @@ import {
 } from '@material-ui/icons'
 
 import dofusIcon from '../../assets/icons/dofus.png'
-import EquipmentSearchFilter from './equipment-search-filter'
+import ItemSearchFilter from './item-search-filter'
 import { removeEmptyParams } from '../../utils/utils'
 import { apiBaseUrl } from '../../config'
 import useApiData from '../../hooks/use-api-data'
@@ -66,8 +67,9 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EquipmentSearch = ({ setFetchParams }) => {
+const ItemSearch = ({ setFetchParams }) => {
   const classes = useStyles()
+  const { pathname } = useLocation()
 
   const initParams = {
     'level[gte]': '',
@@ -82,9 +84,7 @@ const EquipmentSearch = ({ setFetchParams }) => {
   const [selectedEffects, setSelectedEffects] = React.useState([])
   const [params, setParams] = React.useState(initParams)
 
-  const [{ data: fetchedTypes }] = useApiData(
-    `${apiBaseUrl}/encyclopedia/equipment/types`
-  )
+  const [{ data: fetchedTypes }] = useApiData(`${apiBaseUrl}${pathname}/types`)
 
   React.useEffect(() => {
     const types = fetchedTypes.reduce(
@@ -172,7 +172,7 @@ const EquipmentSearch = ({ setFetchParams }) => {
           </IconButton>
           <InputBase
             className={classes.input}
-            placeholder='Search in equipment'
+            placeholder='Search'
             value={name}
             name='name'
             onChange={handleNameChange}
@@ -202,7 +202,7 @@ const EquipmentSearch = ({ setFetchParams }) => {
         >
           <ResetIcon />
         </div>
-        <EquipmentSearchFilter
+        <ItemSearchFilter
           open={open}
           params={params}
           types={types}
@@ -218,4 +218,4 @@ const EquipmentSearch = ({ setFetchParams }) => {
   )
 }
 
-export default EquipmentSearch
+export default ItemSearch

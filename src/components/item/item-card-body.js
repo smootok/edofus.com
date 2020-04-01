@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
-import EquipmentCardEffect from './equipment-card-effect'
+import ItemCardEffect from './item-card-effect'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -9,16 +9,16 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EquipmentCardBody = ({ effects }) => {
+const ItemCardBody = ({ effects }) => {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
       {effects.map((effect, index) => (
-        <EquipmentCardEffect key={index} {...effect} />
+        <ItemCardEffect key={index} {...effect} />
       ))}
     </div>
   )
 }
 
-export default EquipmentCardBody
+export default ItemCardBody

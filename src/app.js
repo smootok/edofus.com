@@ -7,6 +7,7 @@ import { CssBaseline } from '@material-ui/core'
 import theme from './theme'
 import Home from './pages/home'
 import Equipment from './pages/equipment'
+import Weapons from './pages/weapons'
 import PageNotFound from './pages/404'
 
 const App = () => {
@@ -19,6 +20,9 @@ const App = () => {
         </Route>
         <Route exact path='/encyclopedia/equipment'>
           <Equipment />
+        </Route>
+        <Route exact path='/encyclopedia/weapons'>
+          <Weapons />
         </Route>
         <Route path='*'>
           <PageNotFound />

@@ -3,7 +3,7 @@ import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
 import effectsImg from '../../assets/effects.png'
-import { effectsConfig } from './equipment.config'
+import { effectsConfig } from './item.config'
 
 const effectStyles = (theme, effectsConfig) => {
   const styles = {
@@ -33,7 +33,7 @@ const effectStyles = (theme, effectsConfig) => {
 
 const useStyles = makeStyles(theme => effectStyles(theme, effectsConfig))
 
-const EquipmentCardEffect = ({ text, name, start }) => {
+const ItemCardEffect = ({ text, name, start }) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
@@ -48,4 +48,4 @@ const EquipmentCardEffect = ({ text, name, start }) => {
   )
 }
 
-export default EquipmentCardEffect
+export default ItemCardEffect

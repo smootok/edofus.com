@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EquipmentCardFooter = () => {
+const ItemCardFooter = () => {
   const classes = useStyles()
 
   return (
@@ -45,4 +45,4 @@ const EquipmentCardFooter = () => {
   )
 }
 
-export default EquipmentCardFooter
+export default ItemCardFooter

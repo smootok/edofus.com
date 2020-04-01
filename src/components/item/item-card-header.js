@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
@@ -28,8 +29,9 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EquipmentCardHeader = ({ itemId, name, type, level }) => {
+const ItemCardHeader = ({ itemId, name, type, level }) => {
   const classes = useStyles()
+  const { pathname } = useLocation()
 
   return (
     <div className={classes.root}>
@@ -42,13 +44,10 @@ const EquipmentCardHeader = ({ itemId, name, type, level }) => {
         </Typography>
       </div>
       <div className={classes.imageBox}>
-        <img
-          src={`${imagesBaseUrl}/encyclopedia/equipment/${itemId}.png`}
-          alt='img'
-        />
+        <img src={`${imagesBaseUrl}${pathname}/${itemId}.png`} alt='img' />
       </div>
     </div>
   )
 }
 
-export default EquipmentCardHeader
+export default ItemCardHeader
