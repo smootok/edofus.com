@@ -212,6 +212,13 @@ export const effectsConfig = {
       }
     },
     {
+      name: 'air-damage,',
+      text: 'Air Damage',
+      css: {
+        backgroundPosition: '0 -152px'
+      }
+    },
+    {
       name: 'water-damage',
       text: 'Water Damage',
       css: {

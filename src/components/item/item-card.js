@@ -31,7 +31,15 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const ItemCard = ({ itemId, name, type, level, effects }) => {
+const ItemCard = ({
+  itemId,
+  name,
+  type,
+  level,
+  effects,
+  characteristics,
+  conditions
+}) => {
   const classes = useStyles()
 
   return (
@@ -41,7 +49,11 @@ const ItemCard = ({ itemId, name, type, level, effects }) => {
 
         <Divider className={classes.divider} />
 
-        <ItemCardBody effects={effects} />
+        <ItemCardBody
+          effects={effects}
+          characteristics={characteristics}
+          conditions={conditions}
+        />
 
         <Divider className={classes.divider} />
 

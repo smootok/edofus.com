@@ -35,9 +35,21 @@ const useStyles = makeStyles(theme => effectStyles(theme, effectsConfig))
 
 const ItemCardEffect = ({ text, name, start }) => {
   const classes = useStyles()
+  const generateIconClassName = name => {
+    if (!name) {
+      return ''
+    }
+    if (name.includes('(')) {
+      return `${classes.icon} ${name.replace(/[()]/g, '')}`
+    } else {
+      return `${classes.icon} ${name}`
+    }
+  }
+  const iconClassName = generateIconClassName(name)
+
   return (
     <div className={classes.root}>
-      <i className={`${classes.icon} ${name}`} />
+      <i className={iconClassName} />
       <Typography
         className={`${classes.text} ${start < 0 ? `${classes.negative}` : ''}`}
         variant='body1'
