@@ -27,10 +27,14 @@ const useStyles = makeStyles(theme => ({
 
 const Equipment = () => {
   const classes = useStyles()
-  const { pathname } = useLocation()
+  const { pathname, data: builderConfig } = useLocation()
   const url = `${apiBaseUrl}${pathname}`
+  const initParams = builderConfig
+    ? { 'type[in]': [...builderConfig.filterTypes], page: 1 }
+    : { page: 1 }
+
   const [{ data, isLoading, isError }, setFetchParams] = useApiData(url, {
-    page: 1
+    ...initParams
   })
 
   const handleScroll = () => {

@@ -1,8 +1,8 @@
-import equipmentsIcon from '../../assets/icons/equipments.png'
-import weaponsIcon from '../../assets/icons/weapons.png'
-import createStuffIcon from '../../assets/icons/create-stuff.png'
-import myStuffsIcon from '../../assets/icons/my-stuffs.png'
-import HomeIcon from '../../assets/icons/dofus.png'
+import equipmentsIcon from '../../assets/drawer/equipments.png'
+import weaponsIcon from '../../assets/drawer/weapons.png'
+import createStuffIcon from '../../assets/drawer/create-stuff.png'
+import myStuffsIcon from '../../assets/drawer/my-stuffs.png'
+import HomeIcon from '../../assets/dofus.png'
 
 const config = [
   {

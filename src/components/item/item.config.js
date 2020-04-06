@@ -1,3 +1,33 @@
+export const typesConfig = {
+  '/encyclopedia/equipment': [
+    'Amulet',
+    'Backpack',
+    'Belt',
+    'Boots',
+    'Cloak',
+    'Dofus',
+    'Hat',
+    'Living object',
+    'Ring',
+    'Shield',
+    'Trophy'
+  ],
+  '/encyclopedia/weapons': [
+    'Axe',
+    'Bow',
+    'Dagger',
+    'Hammer',
+    'Pickaxe',
+    'Scythe',
+    'Shovel',
+    'Soul stone',
+    'Staff',
+    'Sword',
+    'Tool',
+    'Wand'
+  ]
+}
+
 export const effectsConfig = {
   common: [
     {

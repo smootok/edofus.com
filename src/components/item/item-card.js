@@ -1,10 +1,10 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import { Paper, Grid, Divider } from '@material-ui/core'
 
 import ItemCardHeader from './item-card-header'
 import ItemCardBody from './item-card-body'
-import ItemCardFooter from './item-card-footer'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -14,7 +14,8 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary
   },
   paper: {
-    padding: theme.spacing(2, 4),
+    cursor: props => (props.builderConfig ? 'pointer' : 'auto'),
+    padding: theme.spacing(3, 3),
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
@@ -31,33 +32,17 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const ItemCard = ({
-  itemId,
-  name,
-  type,
-  level,
-  effects,
-  characteristics,
-  conditions
-}) => {
-  const classes = useStyles()
-
+const ItemCard = ({ item }) => {
+  const { data: builderConfig } = useLocation()
+  const classes = useStyles({ builderConfig })
   return (
     <Grid className={classes.root} item xs={12} sm={12} md={6} lg={4} xl={3}>
       <Paper className={classes.paper}>
-        <ItemCardHeader itemId={itemId} name={name} type={type} level={level} />
+        <ItemCardHeader {...item} />
 
         <Divider className={classes.divider} />
 
-        <ItemCardBody
-          effects={effects}
-          characteristics={characteristics}
-          conditions={conditions}
-        />
-
-        <Divider className={classes.divider} />
-
-        <ItemCardFooter />
+        <ItemCardBody {...item} />
       </Paper>
     </Grid>
   )

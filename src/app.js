@@ -8,6 +8,7 @@ import theme from './theme'
 import Home from './pages/home'
 import Equipment from './pages/equipment'
 import Weapons from './pages/weapons'
+import Builder from './pages/builder'
 import PageNotFound from './pages/404'
 
 const App = () => {
@@ -23,6 +24,9 @@ const App = () => {
         </Route>
         <Route exact path='/encyclopedia/weapons'>
           <Weapons />
+        </Route>
+        <Route exact path='/stuffs/builder'>
+          <Builder />
         </Route>
         <Route path='*'>
           <PageNotFound />

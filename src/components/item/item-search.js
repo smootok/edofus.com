@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
@@ -8,11 +9,10 @@ import {
   FilterList as FilterIcon
 } from '@material-ui/icons'
 
-import dofusIcon from '../../assets/icons/dofus.png'
+import dofusIcon from '../../assets/dofus.png'
 import ItemSearchFilter from './item-search-filter'
+import { typesConfig } from './item.config'
 import { removeEmptyParams } from '../../utils/utils'
-import { apiBaseUrl } from '../../config'
-import useApiData from '../../hooks/use-api-data'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,11 +33,11 @@ const useStyles = makeStyles(theme => ({
       borderColor: theme.palette.primary.main
     }
   },
-  input: {
+  nameInput: {
     flex: 1,
     marginLeft: 4
   },
-  iconButton: {
+  insideIcon: {
     padding: theme.spacing(0),
     '& img': {
       width: 20,
@@ -69,30 +69,29 @@ const useStyles = makeStyles(theme => ({
 
 const ItemSearch = ({ setFetchParams }) => {
   const classes = useStyles()
-  const { pathname } = useLocation()
+  const { pathname, data: builderConfig } = useLocation()
 
   const initParams = {
+    name: '',
     'level[gte]': '',
     'level[lte]': '',
     'type[in]': [],
-    'effects.name[all]': []
+    'effects.name[all]': [],
+    page: 1,
+    isNew: true
   }
 
+  const initTypes = builderConfig
+    ? builderConfig.filterTypes.reduce(
+        (acc, cur) => ({ ...acc, [cur]: false }),
+        {}
+      )
+    : typesConfig[pathname].reduce((acc, cur) => ({ ...acc, [cur]: false }), {})
+
   const [open, setOpen] = React.useState(false)
-  const [name, setName] = React.useState('')
-  const [types, setTypes] = React.useState({})
+  const [types, setTypes] = React.useState({ ...initTypes })
   const [selectedEffects, setSelectedEffects] = React.useState([])
-  const [params, setParams] = React.useState(initParams)
-
-  const [{ data: fetchedTypes }] = useApiData(`${apiBaseUrl}${pathname}/types`)
-
-  React.useEffect(() => {
-    const types = fetchedTypes.reduce(
-      (acc, cur) => ({ ...acc, [cur]: false }),
-      {}
-    )
-    setTypes(types)
-  }, [fetchedTypes])
+  const [params, setParams] = React.useState({ ...initParams })
 
   React.useEffect(() => {
     setParams(params => ({
@@ -110,8 +109,8 @@ const ItemSearch = ({ setFetchParams }) => {
   }
 
   const handleNameChange = e => {
-    const { value } = e.target
-    setName(value)
+    const { name, value } = e.target
+    setParams(params => ({ ...params, [name]: value }))
   }
 
   const handleLevelChange = e => {
@@ -132,74 +131,52 @@ const ItemSearch = ({ setFetchParams }) => {
     }))
   }
 
-  const resetFilter = () => {
-    const newTypes = {}
-    for (const type in types) {
-      newTypes[type] = false
-    }
-    setTypes(newTypes)
-    setSelectedEffects([])
-    setParams(initParams)
-  }
-
-  const handleReset = e => {
-    setName('')
-    resetFilter()
-    setFetchParams({ page: 1, isNew: true })
-  }
-
   const handleSubmit = e => {
     e.preventDefault()
-    const params = removeEmptyParams({ name, page: 1, isNew: true })
-    setFetchParams(params)
-    resetFilter()
+    const p = removeEmptyParams({ ...params })
+    setFetchParams(p)
   }
 
   const handleFilterSubmit = e => {
-    e.preventDefault()
     const p = removeEmptyParams({ ...params })
-    setFetchParams({ ...p, page: 1, isNew: true })
-    setName('')
+    if (builderConfig && !p['type[in]']) {
+      setFetchParams({ ...p, 'type[in]': [...builderConfig.filterTypes] })
+    } else {
+      setFetchParams(p)
+    }
     handleClose()
   }
 
   return (
     <>
       <div className={classes.root}>
-        <Paper component='form' className={classes.searchContainer}>
-          <IconButton className={classes.iconButton}>
+        <Paper
+          component='form'
+          className={classes.searchContainer}
+          onSubmit={handleSubmit}
+        >
+          <IconButton className={classes.insideIcon}>
             <img src={dofusIcon} alt='dofus icon' />
           </IconButton>
           <InputBase
-            className={classes.input}
+            className={classes.nameInput}
             placeholder='Search'
-            value={name}
+            value={params.name}
             name='name'
             onChange={handleNameChange}
             autoComplete='off'
           />
-          <IconButton
-            type='submit'
-            className={classes.iconButton}
-            onClick={handleSubmit}
-          >
+          <IconButton type='submit' className={classes.insideIcon}>
             <SearchIcon />
           </IconButton>
         </Paper>
         <div
-          className={`${classes.iconControl} ${classes.iconFilter} ${
-            Object.keys(removeEmptyParams({ ...params })).length === 0
-              ? ''
-              : 'active'
-          }`}
+          className={`${classes.iconControl} ${classes.iconFilter}`}
           onClick={handleOpen}
         >
           <FilterIcon />
         </div>
-        <div
-          className={`${classes.iconControl} ${classes.iconReset}`}
-          onClick={handleReset}
-        >
+        <div className={`${classes.iconControl} ${classes.iconReset}`}>
           <ResetIcon />
         </div>
         <ItemSearchFilter
