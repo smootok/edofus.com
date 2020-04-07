@@ -41,7 +41,7 @@ const ItemCard = ({ item }) => {
 
     history.push({
       pathname: '/builder',
-      data: { item, builderConfig }
+      data: { currentItemBuild: item, builderConfig }
     })
   }
 

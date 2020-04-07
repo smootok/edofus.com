@@ -14,19 +14,25 @@ const useStyles = makeStyles(theme => ({
 
 const Builder = () => {
   const classes = useStyles()
-  const {data: selectedItemData} = useLocation()
-  const [items, setItems] = React.useState({...initBuild})
+  const { data: selectedItemData } = useLocation()
+  const [currentBuild, setCurrentBuild] = React.useState(() => {
+    return JSON.parse(window.localStorage.getItem('currentBuild')) || { ...initBuild }
+  })
 
   React.useEffect(() => {
     if (!selectedItemData) return
-    const { item, builderConfig } = selectedItemData
-    setItems(build => ({...build, [builderConfig.name]: item }))
+    const { currentItemBuild, builderConfig } = selectedItemData
+    setCurrentBuild(currentBuild => ({ ...currentBuild, [builderConfig.name]: currentItemBuild }))
   }, [selectedItemData])
+
+  React.useEffect(() => {
+    window.localStorage.setItem('currentBuild', JSON.stringify(currentBuild))
+  }, [currentBuild])
 
   return (
     <Layout>
       <div className={classes.root}>
-        <BuilderItemContainer builderConfig={builderConfig} items={items} />
+        <BuilderItemContainer builderConfig={builderConfig} currentBuild={currentBuild} />
       </div>
     </Layout>
   )

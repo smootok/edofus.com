@@ -13,8 +13,8 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 4,
     backgroundColor: theme.palette.background.paper,
     backgroundSize: 'cover',
-    backgroundImage: props => props.item
-      ? `url(${imagesBaseUrl}/encyclopedia/${props.config.encyclopediaType}/${props.item.itemId}.png)`
+    backgroundImage: props => props.currentItemBuild
+      ? `url(${imagesBaseUrl}/encyclopedia/${props.config.encyclopediaType}/${props.currentItemBuild.itemId}.png)`
       : `url(${imagesBaseUrl}/builder/${props.config.imgName})`,
     '&:hover': {
       borderColor: theme.palette.primary.main
@@ -22,9 +22,9 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const BuilderItem = ({ config, item }) => {
+const BuilderItem = ({ config, currentItemBuild }) => {
   const { pathname } = useLocation()
-  const classes = useStyles({ config, item, pathname })
+  const classes = useStyles({ config, pathname, currentItemBuild })
   const history = useHistory()
 
   const handleClick = () => {
