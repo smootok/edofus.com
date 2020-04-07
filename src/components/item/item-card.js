@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import { Paper, Grid, Divider } from '@material-ui/core'
 
@@ -34,10 +34,21 @@ const useStyles = makeStyles(theme => ({
 
 const ItemCard = ({ item }) => {
   const { data: builderConfig } = useLocation()
+  const history = useHistory()
+
+  const handleClick = () => {
+    if (!builderConfig) return
+
+    history.push({
+      pathname: '/builder',
+      data: { item, builderConfig }
+    })
+  }
+
   const classes = useStyles({ builderConfig })
   return (
     <Grid className={classes.root} item xs={12} sm={12} md={6} lg={4} xl={3}>
-      <Paper className={classes.paper}>
+      <Paper className={classes.paper} onClick={handleClick}>
         <ItemCardHeader {...item} />
 
         <Divider className={classes.divider} />

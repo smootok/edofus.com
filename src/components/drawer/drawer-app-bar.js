@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
 import {
   Menu as MenuIcon,
-  AccountCircle as AccountCircleIcon,
-  Language as LanguageIcon,
-  ExpandMore as ExpandMoreIcon
+  AccountCircle as AccountCircleIcon
 } from '@material-ui/icons'
 
 import {
@@ -13,8 +11,6 @@ import {
   IconButton,
   Toolbar,
   Button,
-  Menu,
-  MenuItem,
   Typography
 } from '@material-ui/core'
 
@@ -42,15 +38,6 @@ const useStyles = makeStyles(theme => ({
 
 const DrawerAppBar = ({ handleDrawerToggle, drawerWidth, currentPage }) => {
   const classes = useStyles({ drawerWidth })
-  const [anchorEl, setAnchorEl] = useState(null)
-
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
 
   return (
     <AppBar position='fixed' className={classes.appBar}>
@@ -68,26 +55,6 @@ const DrawerAppBar = ({ handleDrawerToggle, drawerWidth, currentPage }) => {
           {currentPage.name}
         </Typography>
         <div className={classes.rightMenu}>
-          <div>
-            <Button
-              aria-controls='simple-menu'
-              aria-haspopup='true'
-              onClick={handleClick}
-            >
-              <LanguageIcon style={{ marginRight: 4 }} /> English
-              <ExpandMoreIcon />
-            </Button>
-            <Menu
-              id='simple-menu'
-              anchorEl={anchorEl}
-              keepMounted
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={handleClose}>English</MenuItem>
-              <MenuItem onClick={handleClose}>Français</MenuItem>
-            </Menu>
-          </div>
           <Button>
             <AccountCircleIcon style={{ marginRight: 4 }} /> Login
           </Button>

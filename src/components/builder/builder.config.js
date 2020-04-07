@@ -1,4 +1,23 @@
 export const builderConfig = {
+  weapon: {
+    name: 'weapon',
+    imgName: 'weapon.png',
+    encyclopediaType: 'weapons',
+    filterTypes: [
+      'Axe',
+      'Bow',
+      'Dagger',
+      'Hammer',
+      'Pickaxe',
+      'Scythe',
+      'Shovel',
+      'Soul stone',
+      'Staff',
+      'Sword',
+      'Tool',
+      'Wand'
+    ]
+  },
   hat: {
     name: 'hat',
     imgName: 'hat.png',
@@ -40,12 +59,6 @@ export const builderConfig = {
     imgName: 'ring.png',
     encyclopediaType: 'equipment',
     filterTypes: ['Ring']
-  },
-  weapon: {
-    name: 'weapon',
-    imgName: 'weapon.png',
-    encyclopediaType: 'weapons',
-    filterTypes: []
   },
   shield: {
     name: 'shield',
@@ -97,6 +110,6 @@ export const builderConfig = {
   }
 }
 
-export const initItems = Object.keys(builderConfig).map(key => ({
+export const initBuild = Object.keys(builderConfig).map(key => ({
   [key]: null
 }))

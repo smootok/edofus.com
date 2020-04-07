@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 
 import { imagesBaseUrl } from '../../config'
@@ -13,15 +13,18 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 4,
     backgroundColor: theme.palette.background.paper,
     backgroundSize: 'cover',
-    backgroundImage: props => `url(${imagesBaseUrl}/builder/${props.imgName})`,
+    backgroundImage: props => props.item
+      ? `url(${imagesBaseUrl}/encyclopedia/${props.config.encyclopediaType}/${props.item.itemId}.png)`
+      : `url(${imagesBaseUrl}/builder/${props.config.imgName})`,
     '&:hover': {
       borderColor: theme.palette.primary.main
     }
   }
 }))
 
-const BuilderItem = ({ config }) => {
-  const classes = useStyles({ imgName: config.imgName })
+const BuilderItem = ({ config, item }) => {
+  const { pathname } = useLocation()
+  const classes = useStyles({ config, item, pathname })
   const history = useHistory()
 
   const handleClick = () => {

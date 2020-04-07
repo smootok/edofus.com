@@ -1,8 +1,8 @@
 import equipmentsIcon from '../../assets/drawer/equipments.png'
 import weaponsIcon from '../../assets/drawer/weapons.png'
-import createStuffIcon from '../../assets/drawer/create-stuff.png'
-import myStuffsIcon from '../../assets/drawer/my-stuffs.png'
-import HomeIcon from '../../assets/dofus.png'
+import builderIcon from '../../assets/drawer/builder.png'
+import savedBuildsIcon from '../../assets/drawer/saved-builds.png'
+import homeIcon from '../../assets/dofus.png'
 
 const config = [
   {
@@ -11,7 +11,22 @@ const config = [
       {
         name: 'Home',
         link: '/',
-        icon: HomeIcon
+        icon: homeIcon
+      }
+    ]
+  },
+  {
+    title: 'Tools',
+    items: [
+      {
+        name: 'Builder',
+        link: '/builder',
+        icon: builderIcon
+      },
+      {
+        name: 'Saved Builds',
+        link: '/builds',
+        icon: savedBuildsIcon
       }
     ]
   },
@@ -27,21 +42,6 @@ const config = [
         name: 'Weapons',
         link: '/encyclopedia/weapons',
         icon: weaponsIcon
-      }
-    ]
-  },
-  {
-    title: 'Tools',
-    items: [
-      {
-        name: 'Create Stuff',
-        link: '/stuffs/builder',
-        icon: createStuffIcon
-      },
-      {
-        name: 'My Stuffs',
-        link: '/stuffs',
-        icon: myStuffsIcon
       }
     ]
   }

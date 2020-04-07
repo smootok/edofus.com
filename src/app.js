@@ -25,7 +25,7 @@ const App = () => {
         <Route exact path='/encyclopedia/weapons'>
           <Weapons />
         </Route>
-        <Route exact path='/stuffs/builder'>
+        <Route exact path='/builder'>
           <Builder />
         </Route>
         <Route path='*'>
