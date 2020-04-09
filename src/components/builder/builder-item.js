@@ -7,8 +7,8 @@ import { imagesBaseUrl } from '../../config'
 const useStyles = makeStyles(theme => ({
   root: {
     cursor: 'pointer',
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
     border: `1px solid ${theme.palette.text.secondary}`,
     borderRadius: 4,
     backgroundColor: theme.palette.background.paper,

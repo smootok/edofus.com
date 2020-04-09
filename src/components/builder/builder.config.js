@@ -110,6 +110,6 @@ export const builderConfig = {
   }
 }
 
-export const initBuild = Object.keys(builderConfig).map(key => ({
-  [key]: null
-}))
+export const initBuild = Object.keys(builderConfig).reduce((acc, key) => ({
+  ...acc, [key]: null
+}), {})
