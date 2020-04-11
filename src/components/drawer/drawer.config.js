@@ -1,5 +1,6 @@
 import equipmentsIcon from '../../assets/drawer/equipments.png'
 import weaponsIcon from '../../assets/drawer/weapons.png'
+import petsIcon from '../../assets/drawer/pets.png'
 import builderIcon from '../../assets/drawer/builder.png'
 import savedBuildsIcon from '../../assets/drawer/saved-builds.png'
 import homeIcon from '../../assets/dofus.png'
@@ -42,6 +43,11 @@ const config = [
         name: 'Weapons',
         link: '/encyclopedia/weapons',
         icon: weaponsIcon
+      },
+      {
+        name: 'Pets',
+        link: '/encyclopedia/pets',
+        icon: petsIcon
       }
     ]
   }

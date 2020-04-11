@@ -8,6 +8,7 @@ import theme from './theme'
 import Home from './pages/home'
 import Equipment from './pages/equipment'
 import Weapons from './pages/weapons'
+import Pets from './pages/pets'
 import Builder from './pages/builder'
 import PageNotFound from './pages/404'
 
@@ -19,14 +20,17 @@ const App = () => {
         <Route exact path='/'>
           <Home />
         </Route>
+        <Route exact path='/builder'>
+          <Builder />
+        </Route>
         <Route exact path='/encyclopedia/equipment'>
           <Equipment />
         </Route>
         <Route exact path='/encyclopedia/weapons'>
           <Weapons />
         </Route>
-        <Route exact path='/builder'>
-          <Builder />
+        <Route exact path='/encyclopedia/pets'>
+          <Pets />
         </Route>
         <Route path='*'>
           <PageNotFound />

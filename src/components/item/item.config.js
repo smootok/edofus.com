@@ -25,6 +25,11 @@ export const typesConfig = {
     'Sword',
     'Tool',
     'Wand'
+  ],
+  '/encyclopedia/pets': [
+    'Mounts',
+    'Pet',
+    'Petsmount'
   ]
 }
 

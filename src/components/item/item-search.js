@@ -89,9 +89,9 @@ const ItemSearch = ({ setFetchParams }) => {
     : typesConfig[pathname].reduce((acc, cur) => ({ ...acc, [cur]: false }), {})
 
   const [open, setOpen] = React.useState(false)
+  const [params, setParams] = React.useState({ ...initParams })
   const [types, setTypes] = React.useState({ ...initTypes })
   const [selectedEffects, setSelectedEffects] = React.useState([])
-  const [params, setParams] = React.useState({ ...initParams })
 
   React.useEffect(() => {
     setParams(params => ({
@@ -147,6 +147,18 @@ const ItemSearch = ({ setFetchParams }) => {
     handleClose()
   }
 
+  const handleReset = e => {
+    setParams({ ...initParams })
+    setTypes({ ...initTypes })
+    setSelectedEffects([])
+    const p = removeEmptyParams({ ...initParams })
+    if (builderConfig && !p['type[in]']) {
+      setFetchParams({ ...p, 'type[in]': [...builderConfig.filterTypes] })
+    } else {
+      setFetchParams(p)
+    }
+  }
+
   return (
     <>
       <div className={classes.root}>
@@ -171,12 +183,19 @@ const ItemSearch = ({ setFetchParams }) => {
           </IconButton>
         </Paper>
         <div
-          className={`${classes.iconControl} ${classes.iconFilter}`}
+          className={`${classes.iconControl} ${classes.iconFilter} ${
+            Object.keys(removeEmptyParams({ ...params })).length > 2
+              ? 'active'
+              : ''
+          }`}
           onClick={handleOpen}
         >
           <FilterIcon />
         </div>
-        <div className={`${classes.iconControl} ${classes.iconReset}`}>
+        <div
+          className={`${classes.iconControl} ${classes.iconReset}`}
+          onClick={handleReset}
+        >
           <ResetIcon />
         </div>
         <ItemSearchFilter
