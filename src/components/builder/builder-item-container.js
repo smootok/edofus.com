@@ -6,7 +6,7 @@ import BuilderItem from './builder-item'
 const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 480,
-    margin: '50px auto'
+    margin: '20px auto'
   },
   top: {
     display: 'flex',

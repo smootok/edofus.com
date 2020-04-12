@@ -17,8 +17,11 @@ const useStyles = makeStyles(theme => ({
     color: 'inherit'
   },
   active: {
-    backgroundColor: theme.palette.action.selected,
-    color: theme.palette.primary.main
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    color: theme.palette.primary.main,
+    '& *': {
+      fontWeight: 'bold'
+    }
   }
 }))
 

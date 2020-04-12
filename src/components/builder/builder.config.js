@@ -110,6 +110,31 @@ export const builderConfig = {
   }
 }
 
-export const initBuild = Object.keys(builderConfig).reduce((acc, key) => ({
-  ...acc, [key]: null
-}), {})
+export const initBuild = Object.keys(builderConfig).reduce(
+  (acc, key) => ({
+    ...acc,
+    [key]: null
+  }),
+  {}
+)
+
+export const classesConfig = [
+  'cra',
+  'ecaflip',
+  'eliotrope',
+  'eniripsa',
+  'enutrof',
+  'feca',
+  'foggernaut',
+  'huppermage',
+  'iop',
+  'masqueraider',
+  'osamoda',
+  'ouginak',
+  'pandawa',
+  'rogue',
+  'sacri',
+  'sadida',
+  'sram',
+  'xelor'
+]

@@ -7,10 +7,12 @@ import Layout from '../components/layout/layout'
 import BuilderItemContainer from '../components/builder/builder-item-container'
 import BuilderEffects from '../components/builder/builder-effects'
 import { initBuild, builderConfig } from '../components/builder/builder.config'
+import BuilderCharacteristics from '../components/builder/builder-characteristics'
+import BuilderActions from '../components/builder/builder-actions'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    margin: 100,
+    margin: '100px 50px',
     display: 'flex'
   }
 }))
@@ -64,10 +66,14 @@ const Builder = () => {
             <BuilderEffects effects={effects} />
           </Grid>
           <Grid item lg={6}>
+            <BuilderActions />
             <BuilderItemContainer
               builderConfig={builderConfig}
               currentBuild={currentBuild}
             />
+          </Grid>
+          <Grid item lg={3}>
+            <BuilderCharacteristics />
           </Grid>
         </Grid>
       </div>
