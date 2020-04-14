@@ -134,7 +134,7 @@ const Builder = () => {
             />
           </Grid>
           <Grid item lg={3}>
-            {currentBuild && (
+            {currentBuild.baseStats && (
               <BuilderCharacteristics
                 basePoints={basePoints}
                 baseStats={currentBuild.baseStats}
