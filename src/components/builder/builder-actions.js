@@ -49,8 +49,15 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const BuilderActions = () => {
+const BuilderActions = ({
+  level,
+  classType,
+  handleLevelChange,
+  handleClassTypeChange,
+  handleItemsReset
+}) => {
   const classes = useStyles()
+
   return (
     <div className={classes.root}>
       <div className={classes.left}>
@@ -61,7 +68,14 @@ const BuilderActions = () => {
             size='small'
           >
             <InputLabel htmlFor='outlined-age-native-simple'>Class</InputLabel>
-            <Select native label='Class' className={classes.classesSelect}>
+            <Select
+              native
+              label='Class'
+              className={classes.classesSelect}
+              name='classType'
+              value={classType}
+              onChange={handleClassTypeChange}
+            >
               {classesConfig.map(classConfig => (
                 <option key={classConfig} value={classConfig}>
                   {classConfig}
@@ -73,18 +87,19 @@ const BuilderActions = () => {
 
         <div className={classes.levelContainer}>
           <TextField
-            classes={classes.levelInput}
+            name='level'
             label='level'
             variant='outlined'
             size='small'
             type='number'
-            value={200}
+            onChange={handleLevelChange}
+            value={level}
             className={classes.input}
           />
         </div>
       </div>
       <div className={classes.right}>
-        <div className={`${classes.iconControl} ${classes.deleteIcon}`}>
+        <div className={`${classes.iconControl} ${classes.deleteIcon}`} onClick={handleItemsReset}>
           <DeleteIcon />
         </div>
         <div className={`${classes.iconControl} ${classes.saveIcon}`}>

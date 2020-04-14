@@ -40,7 +40,7 @@ const builderEffectsStyles = (theme, effectsConfig) => {
     },
     value: {
       fontWeight: 700,
-      marginRight: 5
+      marginRight: theme.spacing(1)
     }
   }
   for (const key in effectsConfig) {
@@ -72,7 +72,9 @@ const BuilderEffects = ({ effects }) => {
                 <div className={classes.name}>{effect.text}</div>
               </div>
               <div className={classes.right}>
-                <div className={classes.value}>{effects[effect.name] || 0}</div>
+                <div className={classes.value}>
+                  {effects[effect.name] || 0}{effect.name.includes('percentage') && '%'}
+                </div>
               </div>
             </div>
           ))}

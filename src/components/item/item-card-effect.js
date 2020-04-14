@@ -33,8 +33,8 @@ const effectStyles = (theme, effectsConfig) => {
 
 const useStyles = makeStyles(theme => effectStyles(theme, effectsConfig))
 
-const ItemCardEffect = ({ text, name, start }) => {
-  const classes = useStyles()
+const ItemCardEffect = ({ text, name, start, size }) => {
+  const classes = useStyles({ size })
   const generateIconClassName = name => {
     if (!name) {
       return ''
@@ -52,7 +52,7 @@ const ItemCardEffect = ({ text, name, start }) => {
       <i className={iconClassName} />
       <Typography
         className={`${classes.text} ${start < 0 ? `${classes.negative}` : ''}`}
-        variant='body1'
+        variant={size === 'small' ? 'body2' : 'body1'}
       >
         {text}
       </Typography>

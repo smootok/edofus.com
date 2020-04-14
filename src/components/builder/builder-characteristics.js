@@ -61,7 +61,15 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Characteristic = ({ classes, name, imgSrc }) => {
+const Characteristic = ({
+  classes,
+  name,
+  imgSrc,
+  scrollsValue,
+  handleScrollsChange,
+  baseStatsValue,
+  handleBaseStatsChange
+}) => {
   return (
     <div className={classes.characteristic}>
       <div className={classes.left}>
@@ -70,10 +78,12 @@ const Characteristic = ({ classes, name, imgSrc }) => {
           <TextField
             id='outlined-basic'
             variant='outlined'
+            name={name}
             size='small'
             type='number'
-            value={0}
+            value={baseStatsValue}
             className={classes.input}
+            onChange={handleBaseStatsChange}
           />
         </div>
       </div>
@@ -87,10 +97,12 @@ const Characteristic = ({ classes, name, imgSrc }) => {
         </div>
         <div className={classes.scrollCheckBoxContainer}>
           <Checkbox
-            checked={false}
+            checked={scrollsValue === 101}
+            name={name}
             color='primary'
             inputProps={{ 'aria-label': 'primary checkbox' }}
             className={classes.scrollCheckbox}
+            onChange={handleScrollsChange}
           />
         </div>
       </div>
@@ -98,7 +110,13 @@ const Characteristic = ({ classes, name, imgSrc }) => {
   )
 }
 
-const BuilderCharacteristics = ({ charcteristics }) => {
+const BuilderCharacteristics = ({
+  scrolls,
+  baseStats,
+  basePoints,
+  handleBaseStatsChange,
+  handleScrollsChange
+}) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
@@ -107,33 +125,57 @@ const BuilderCharacteristics = ({ charcteristics }) => {
         name='vitality'
         imgSrc={vitalityScrollImg}
         classes={classes}
+        baseStatsValue={baseStats.vitality}
+        handleBaseStatsChange={handleBaseStatsChange}
+        scrollsValue={scrolls.vitality}
+        handleScrollsChange={handleScrollsChange}
       />
       <Characteristic
         name='wisdom'
         imgSrc={wisdomScrollImg}
         classes={classes}
+        baseStatsValue={baseStats.wisdom}
+        handleBaseStatsChange={handleBaseStatsChange}
+        scrollsValue={scrolls.wisdom}
+        handleScrollsChange={handleScrollsChange}
       />
       <Characteristic
         name='strength'
         imgSrc={strengthScrollImg}
         classes={classes}
+        baseStatsValue={baseStats.strength}
+        handleBaseStatsChange={handleBaseStatsChange}
+        scrollsValue={scrolls.strength}
+        handleScrollsChange={handleScrollsChange}
       />
       <Characteristic
         name='intelligence'
         imgSrc={intelligenceScrollImg}
         classes={classes}
+        baseStatsValue={baseStats.intelligence}
+        handleBaseStatsChange={handleBaseStatsChange}
+        scrollsValue={scrolls.intelligence}
+        handleScrollsChange={handleScrollsChange}
       />
       <Characteristic
         name='chance'
         imgSrc={chanceScrollImg}
         classes={classes}
+        baseStatsValue={baseStats.chance}
+        handleBaseStatsChange={handleBaseStatsChange}
+        scrollsValue={scrolls.chance}
+        handleScrollsChange={handleScrollsChange}
       />
       <Characteristic
         name='agility'
         imgSrc={agilityScrollImg}
         classes={classes}
+        baseStatsValue={baseStats.agility}
+        handleBaseStatsChange={handleBaseStatsChange}
+        scrollsValue={scrolls.agility}
+        handleScrollsChange={handleScrollsChange}
       />
-      <div className={classes.basePoints}>Base Points: 995</div>
+      <div className={classes.basePoints}>Base Points: {basePoints}</div>
     </div>
   )
 }

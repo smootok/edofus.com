@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const ItemCardBody = ({ effects, characteristics, conditions }) => {
+const ItemCardBody = ({ effects, characteristics, conditions, size }) => {
   const classes = useStyles()
 
   const groupEffects = effects => {
@@ -41,11 +41,11 @@ const ItemCardBody = ({ effects, characteristics, conditions }) => {
     <div className={classes.root}>
       <div className={classes.effects}>
         {weaponEffects.map((effect, index) => (
-          <ItemCardEffect key={index} {...effect} />
+          <ItemCardEffect key={index} {...effect} size={size} />
         ))}
         {weaponEffects.length > 0 && <Divider className={classes.divider} />}
         {otherEffects.map((effect, index) => (
-          <ItemCardEffect key={index} {...effect} />
+          <ItemCardEffect key={index} {...effect} size={size} />
         ))}
       </div>
 

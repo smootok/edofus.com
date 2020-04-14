@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 
 import { imagesBaseUrl } from '../../config'
+import BuilderItemTooltip from './builder-item-tooltip'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -13,16 +14,17 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 4,
     backgroundColor: theme.palette.background.paper,
     backgroundSize: 'cover',
-    backgroundImage: props => props.currentItemBuild
-      ? `url(${imagesBaseUrl}/encyclopedia/${props.config.encyclopediaType}/${props.currentItemBuild.itemId}.png)`
-      : `url(${imagesBaseUrl}/builder/${props.config.imgName})`,
+    backgroundImage: props =>
+      props.currentItemBuild
+        ? `url(${imagesBaseUrl}/encyclopedia/${props.config.encyclopediaType}/${props.currentItemBuild.itemId}.png)`
+        : `url(${imagesBaseUrl}/builder/${props.config.imgName})`,
     '&:hover': {
       borderColor: theme.palette.primary.main
     }
   }
 }))
 
-const BuilderItem = ({ config, currentItemBuild }) => {
+const BuilderItem = ({ config, currentItemBuild, handleItemDelete }) => {
   const { pathname } = useLocation()
   const classes = useStyles({ config, pathname, currentItemBuild })
   const history = useHistory()
@@ -34,7 +36,16 @@ const BuilderItem = ({ config, currentItemBuild }) => {
     })
   }
 
-  return <div className={`${classes.root}`} onClick={handleClick} />
+  return (
+    <BuilderItemTooltip
+      config={config}
+      currentItemBuild={currentItemBuild}
+      placement={config.placement}
+      handleItemDelete={handleItemDelete}
+    >
+      <div className={`${classes.root}`} onClick={handleClick} />
+    </BuilderItemTooltip>
+  )
 }
 
 export default BuilderItem

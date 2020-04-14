@@ -26,11 +26,7 @@ export const typesConfig = {
     'Tool',
     'Wand'
   ],
-  '/encyclopedia/pets': [
-    'Mounts',
-    'Pet',
-    'Petsmount'
-  ]
+  '/encyclopedia/pets': ['Mounts', 'Pet', 'Petsmount']
 }
 
 export const effectsConfig = {
@@ -124,7 +120,7 @@ export const effectsConfig = {
   ],
   secondary: [
     {
-      name: 'critical',
+      name: 'critical-percentage',
       text: 'Critical',
       css: {
         backgroundPosition: '0 -574px'
@@ -313,6 +309,41 @@ export const effectsConfig = {
   ],
   resistance: [
     {
+      name: 'neutral-resistance-percentage',
+      text: 'Neutral Resistance',
+      css: {
+        backgroundPosition: '0 0'
+      }
+    },
+    {
+      name: 'fire-resistance-percentage',
+      text: 'Fire Resistance',
+      css: {
+        backgroundPosition: '0 -379px'
+      }
+    },
+    {
+      name: 'earth-resistance-percentage',
+      text: 'Earth Resistance',
+      css: {
+        backgroundPosition: '0 -417px'
+      }
+    },
+    {
+      name: 'water-resistance-percentage',
+      text: 'Water Resistance',
+      css: {
+        backgroundPosition: '0 -74px'
+      }
+    },
+    {
+      name: 'air-resistance-percentage',
+      text: 'Air Resistance',
+      css: {
+        backgroundPosition: '0 -152px'
+      }
+    },
+    {
       name: 'neutral-resistance',
       text: 'Neutral Resistance',
       css: {
@@ -348,55 +379,6 @@ export const effectsConfig = {
       }
     },
     {
-      name: 'spell-resistance',
-      text: 'Spell Resistance',
-      css: {
-        backgroundPosition: '0 -1407px'
-      }
-    },
-    {
-      name: 'weapon-resistance',
-      text: 'Weapon Resistance',
-      css: {
-        backgroundPosition: '0 -1407px'
-      }
-    },
-    {
-      name: 'melee-resistance',
-      text: 'Melee Resistance',
-      css: {
-        backgroundPosition: '0 -1407px'
-      }
-    },
-    {
-      name: 'distance-resistance',
-      text: 'Distance Resistance',
-      css: {
-        backgroundPosition: '0 -1407px'
-      }
-    },
-    {
-      name: 'ranged-resistance',
-      text: 'Ranged Resistance',
-      css: {
-        backgroundPosition: '0 -1407px'
-      }
-    },
-    {
-      name: 'ap-resistance',
-      text: 'AP Resistance',
-      css: {
-        backgroundPosition: '0 -1049px'
-      }
-    },
-    {
-      name: 'mp-resistance',
-      text: 'MP Resistance',
-      css: {
-        backgroundPosition: '0 -1001px'
-      }
-    },
-    {
       name: 'critical-resistance',
       text: 'Critical Resistance',
       css: {
@@ -408,43 +390,6 @@ export const effectsConfig = {
       text: 'Pushback Resistance',
       css: {
         backgroundPosition: '0 -817px'
-      }
-    }
-  ],
-  steal: [
-    {
-      name: 'neutral-steal',
-      text: 'Neutral Steal',
-      css: {
-        backgroundPosition: '0 0'
-      }
-    },
-    {
-      name: 'fire-steal',
-      text: 'Fire Steal',
-      css: {
-        backgroundPosition: '0 -379px'
-      }
-    },
-    {
-      name: 'earth-steal',
-      text: 'Earth Steal',
-      css: {
-        backgroundPosition: ''
-      }
-    },
-    {
-      name: 'water-steal',
-      text: 'Water Steal',
-      css: {
-        backgroundPosition: '0 -74px'
-      }
-    },
-    {
-      name: 'air-steal',
-      text: 'Air Steal',
-      css: {
-        backgroundPosition: '0 -152px'
       }
     }
   ]
