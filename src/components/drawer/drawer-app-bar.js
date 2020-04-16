@@ -18,14 +18,14 @@ const useStyles = makeStyles(theme => ({
   appBar: {
     backgroundColor: theme.palette.background.paper,
     color: theme.palette.text.primary,
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: props => `calc(100% - ${props.drawerWidth}px)`,
       marginLeft: props => props.drawerWidth
     }
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       display: 'none'
     }
   },

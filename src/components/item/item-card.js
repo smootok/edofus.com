@@ -47,7 +47,7 @@ const ItemCard = ({ item }) => {
 
   const classes = useStyles({ builderConfig })
   return (
-    <Grid className={classes.root} item xs={12} sm={12} md={6} lg={4} xl={3}>
+    <Grid className={classes.root} item xs={12} sm={6} md={6} lg={4} xl={3}>
       <Paper className={classes.paper} onClick={handleClick}>
         <ItemCardHeader {...item} />
 

@@ -6,8 +6,11 @@ import { imagesBaseUrl } from '../../config'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 480,
-    margin: '20px auto'
+    maxWidth: 440,
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: 290
+    },
+    margin: 'auto'
   },
   top: {
     display: 'flex',
@@ -25,6 +28,13 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between'
+  },
+  classImg: {
+    '& img': {
+      [theme.breakpoints.down('xs')]: {
+        maxWidth: 150
+      }
+    }
   }
 }))
 

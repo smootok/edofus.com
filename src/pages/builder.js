@@ -18,6 +18,24 @@ const useStyles = makeStyles(theme => ({
   root: {
     margin: '100px 50px',
     display: 'flex'
+  },
+  builderEffectsGrid: {
+    margin: '0 auto',
+    [theme.breakpoints.down('xs')]: {
+      order: 2
+    }
+  },
+  builderItemContainerGrid: {
+    [theme.breakpoints.down('md')]: {
+      order: -1
+    },
+    margin: '0 auto'
+  },
+  builderCharacteristicsGrid: {
+    margin: '0 auto',
+    [theme.breakpoints.down('xs')]: {
+      order: 1
+    }
   }
 }))
 
@@ -114,11 +132,26 @@ const Builder = () => {
   return (
     <Layout>
       <div className={classes.root}>
-        <Grid container>
-          <Grid item lg={3}>
+        <Grid container spacing={2}>
+          <Grid
+            item
+            lg={3}
+            md={6}
+            sm={6}
+            xs={12}
+            className={classes.builderEffectsGrid}
+          >
             <BuilderEffects effects={effects} />
           </Grid>
-          <Grid item lg={6}>
+
+          <Grid
+            item
+            lg={6}
+            md={12}
+            sm={12}
+            xs={12}
+            className={classes.builderItemContainerGrid}
+          >
             <BuilderActions
               level={currentBuild.level}
               classType={currentBuild.classType}
@@ -133,7 +166,14 @@ const Builder = () => {
               handleItemDelete={handleItemDelete}
             />
           </Grid>
-          <Grid item lg={3}>
+          <Grid
+            item
+            lg={3}
+            md={6}
+            sm={6}
+            xs={12}
+            className={classes.builderCharacteristicsGrid}
+          >
             {currentBuild.baseStats && (
               <BuilderCharacteristics
                 basePoints={basePoints}

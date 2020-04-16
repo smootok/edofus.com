@@ -10,6 +10,10 @@ const useStyles = makeStyles(theme => ({
     cursor: 'pointer',
     width: 70,
     height: 70,
+    [theme.breakpoints.down('xs')]: {
+      width: 42,
+      height: 42
+    },
     border: `1px solid ${theme.palette.text.secondary}`,
     borderRadius: 4,
     backgroundColor: theme.palette.background.paper,

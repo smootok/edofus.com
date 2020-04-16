@@ -13,31 +13,33 @@ import DrawerAppBar from './drawer-app-bar'
 
 const drawerWidth = 240
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex'
-  },
-  drawer: {
-    [theme.breakpoints.up('sm')]: {
-      width: drawerWidth,
-      flexShrink: 0
+const useStyles = makeStyles(theme => {
+  return {
+    root: {
+      display: 'flex'
+    },
+    drawer: {
+      [theme.breakpoints.up('md')]: {
+        width: drawerWidth,
+        flexShrink: 0
+      }
+    },
+    toolbar: {
+      ...theme.mixins.toolbar,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    drawerPaper: {
+      width: drawerWidth
+    },
+    title: {
+      fontSize: 22,
+      fontWeight: 'bold'
     }
-  },
-  toolbar: {
-    ...theme.mixins.toolbar,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  drawerPaper: {
-    width: drawerWidth
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold'
   }
-}))
+})
 
 const Drawer = ({ config }) => {
   const classes = useStyles()
@@ -84,7 +86,7 @@ const Drawer = ({ config }) => {
         currentPage={currentPage}
       />
       <nav className={classes.drawer}>
-        <Hidden smUp implementation='css'>
+        <Hidden mdUp implementation='css'>
           <DrawerUI
             variant='temporary'
             open={mobileOpen}
@@ -99,7 +101,7 @@ const Drawer = ({ config }) => {
             {drawer}
           </DrawerUI>
         </Hidden>
-        <Hidden xsDown implementation='css'>
+        <Hidden smDown implementation='css'>
           <DrawerUI
             classes={{
               paper: classes.drawerPaper

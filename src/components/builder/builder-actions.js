@@ -11,8 +11,8 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 10,
-    maxWidth: 480,
-    margin: 'auto',
+    maxWidth: 440,
+    margin: '0 auto 10px auto',
     border: `1px solid ${theme.palette.background.paper}`
   },
   iconControl: {

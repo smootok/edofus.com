@@ -7,9 +7,12 @@ import { effectsConfig } from '../item/item.config'
 const builderEffectsStyles = (theme, effectsConfig) => {
   const styles = {
     root: {
+      maxWidth: 300,
       maxHeight: '80vh',
       overflow: 'scroll',
-      borderRadius: 10
+      borderRadius: 10,
+      border: `1px solid ${theme.palette.divider}`,
+      margin: 'auto'
     },
     section: {
       marginBottom: theme.spacing(3)

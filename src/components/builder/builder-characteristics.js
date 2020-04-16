@@ -11,8 +11,10 @@ import agilityScrollImg from '../../assets/builder/agility-scroll.png'
 
 const useStyles = makeStyles(theme => ({
   root: {
+    maxWidth: 300,
     borderRadius: 10,
-    border: `1px solid ${theme.palette.divider}`
+    border: `1px solid ${theme.palette.divider}`,
+    margin: 'auto'
   },
   category: {
     fontWeight: 500,
