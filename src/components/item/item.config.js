@@ -127,13 +127,6 @@ export const effectsConfig = {
       }
     },
     {
-      name: 'healing-done',
-      text: 'Healing Done',
-      css: {
-        backgroundPosition: '0 -903px'
-      }
-    },
-    {
       name: 'damage',
       text: 'Damage',
       css: {
@@ -229,17 +222,17 @@ export const effectsConfig = {
       }
     },
     {
+      name: 'earth-damage',
+      text: 'Earth Damage',
+      css: {
+        backgroundPosition: '0 -417px'
+      }
+    },
+    {
       name: 'fire-damage',
       text: 'Fire Damage',
       css: {
         backgroundPosition: '0 -379px'
-      }
-    },
-    {
-      name: 'earth-damage,',
-      text: 'Earth Damage',
-      css: {
-        backgroundPosition: '0 -417px'
       }
     },
     {

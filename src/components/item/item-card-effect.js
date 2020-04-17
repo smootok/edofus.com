@@ -2,7 +2,7 @@ import React from 'react'
 import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
-import effectsImg from '../../assets/effects.png'
+import effectsSprite from '../../assets/effects-sprite.png'
 import { effectsConfig } from './item.config'
 
 const effectStyles = (theme, effectsConfig) => {
@@ -16,7 +16,7 @@ const effectStyles = (theme, effectsConfig) => {
     icon: {
       width: 24,
       height: 24,
-      background: `transparent url(${effectsImg}) 0 -1387px no-repeat`,
+      background: `transparent url(${effectsSprite}) 0 -1387px no-repeat`,
       marginRight: theme.spacing(1)
     }
   }

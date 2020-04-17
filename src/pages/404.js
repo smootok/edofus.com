@@ -6,10 +6,11 @@ import Layout from '../components/layout/layout'
 
 const useStyles = makeStyles(theme => ({
   root: {
+    minHeight: '95vh',
     display: 'flex',
-    minHeight: '100vh',
-    alignItems: 'center',
-    justifyContent: 'center'
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 }))
 
@@ -19,7 +20,8 @@ const PageNotFound = () => {
   return (
     <Layout>
       <div className={classes.root}>
-        <Typography variant='h2'>Page Not Found!</Typography>
+        <Typography variant='h2'>404!</Typography>
+        <Typography>Page Not Found.</Typography>
       </div>
     </Layout>
   )

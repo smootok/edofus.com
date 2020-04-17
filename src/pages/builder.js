@@ -54,10 +54,8 @@ const Builder = () => {
   const [effects, setEffects] = React.useState({})
 
   React.useEffect(() => {
-    if (!currentBuild) return
-    const effects = calcEffects(currentBuild)
-    setEffects(effects)
-  }, [currentBuild])
+    window.scrollTo(0, 0)
+  }, [])
 
   React.useEffect(() => {
     if (!selectedItemData) return
@@ -69,6 +67,9 @@ const Builder = () => {
   }, [selectedItemData])
 
   React.useEffect(() => {
+    if (!currentBuild) return
+    const effects = calcEffects(currentBuild)
+    setEffects(effects)
     window.localStorage.setItem('currentBuild', JSON.stringify(currentBuild))
     const basePoints = calcBasePoints(currentBuild)
     setBasePoints(basePoints)
