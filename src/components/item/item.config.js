@@ -148,71 +148,6 @@ export const effectsConfig = {
       }
     }
   ],
-  other: [
-    {
-      name: 'lock',
-      text: 'Lock',
-      css: {
-        backgroundPosition: '0 -531px'
-      }
-    },
-    {
-      name: 'dodge',
-      text: 'Dodge',
-      css: {
-        backgroundPosition: '0 -452px'
-      }
-    },
-    {
-      name: 'ap-reduction',
-      text: 'AP Reduction',
-      css: {
-        backgroundPosition: '0 -1282px'
-      }
-    },
-    {
-      name: 'mp-reduction',
-      text: 'MP Reduction',
-      css: {
-        backgroundPosition: '0 -1325px'
-      }
-    },
-    {
-      name: 'ap-parry',
-      text: 'AP Parry',
-      css: {
-        backgroundPosition: '0 -1049px'
-      }
-    },
-    {
-      name: 'mp-parry',
-      text: 'MP Parry',
-      css: {
-        backgroundPosition: '0 -1001px'
-      }
-    },
-    {
-      name: 'trap-damage',
-      text: 'Trap Damage',
-      css: {
-        backgroundPosition: '0 -697px'
-      }
-    },
-    {
-      name: 'trap-power',
-      text: 'Trap Power',
-      css: {
-        backgroundPosition: '0 -658px'
-      }
-    },
-    {
-      name: 'pods',
-      text: 'Pods',
-      css: {
-        backgroundPosition: '5px -1367px'
-      }
-    }
-  ],
   damage: [
     {
       name: 'neutral-damage',
@@ -383,6 +318,71 @@ export const effectsConfig = {
       text: 'Pushback Resistance',
       css: {
         backgroundPosition: '0 -817px'
+      }
+    }
+  ],
+  other: [
+    {
+      name: 'lock',
+      text: 'Lock',
+      css: {
+        backgroundPosition: '0 -531px'
+      }
+    },
+    {
+      name: 'dodge',
+      text: 'Dodge',
+      css: {
+        backgroundPosition: '0 -452px'
+      }
+    },
+    {
+      name: 'ap-reduction',
+      text: 'AP Reduction',
+      css: {
+        backgroundPosition: '0 -1282px'
+      }
+    },
+    {
+      name: 'mp-reduction',
+      text: 'MP Reduction',
+      css: {
+        backgroundPosition: '0 -1325px'
+      }
+    },
+    {
+      name: 'ap-parry',
+      text: 'AP Parry',
+      css: {
+        backgroundPosition: '0 -1049px'
+      }
+    },
+    {
+      name: 'mp-parry',
+      text: 'MP Parry',
+      css: {
+        backgroundPosition: '0 -1001px'
+      }
+    },
+    {
+      name: 'trap-damage',
+      text: 'Trap Damage',
+      css: {
+        backgroundPosition: '0 -697px'
+      }
+    },
+    {
+      name: 'trap-power',
+      text: 'Trap Power',
+      css: {
+        backgroundPosition: '0 -658px'
+      }
+    },
+    {
+      name: 'pods',
+      text: 'Pods',
+      css: {
+        backgroundPosition: '5px -1367px'
       }
     }
   ]

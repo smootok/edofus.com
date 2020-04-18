@@ -12,7 +12,6 @@ import agilityScrollImg from '../../assets/builder/agility-scroll.png'
 const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 300,
-    borderRadius: 10,
     border: `1px solid ${theme.palette.divider}`,
     margin: 'auto'
   },
@@ -20,8 +19,8 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 500,
     fontSize: '1.2em',
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
-    padding: theme.spacing(1),
-    borderRadius: '10px 10px 0 0'
+    // padding: theme.spacing(1),
+    padding: '10px 24px 10px 24px'
   },
   characteristic: {
     display: 'flex',
@@ -122,7 +121,7 @@ const BuilderCharacteristics = ({
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <div className={classes.category}>Characteristics</div>
+      <div className={classes.category}>characteristics</div>
       <Characteristic
         name='vitality'
         imgSrc={vitalityScrollImg}

@@ -1,5 +1,10 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
+import ExpansionPanel from '@material-ui/core/ExpansionPanel'
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
+import Typography from '@material-ui/core/Typography'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 import effectsSprite from '../../assets/effects-sprite.png'
 import { effectsConfig } from '../item/item.config'
@@ -8,9 +13,6 @@ const builderEffectsStyles = (theme, effectsConfig) => {
   const styles = {
     root: {
       maxWidth: 300,
-      maxHeight: '80vh',
-      overflow: 'scroll',
-      borderRadius: 10,
       border: `1px solid ${theme.palette.divider}`,
       margin: 'auto'
     },
@@ -18,18 +20,18 @@ const builderEffectsStyles = (theme, effectsConfig) => {
       marginBottom: theme.spacing(3)
     },
     category: {
+      backgroundColor: 'rgba(0, 0, 0, 0.4)'
+    },
+    categoryHeading: {
       fontWeight: 500,
-      fontSize: '1.2em',
-      backgroundColor: 'rgba(0, 0, 0, 0.4)',
-      padding: theme.spacing(1),
-      borderRadius: '10px 10px 0 0'
+      fontSize: '1.2em'
     },
     effect: {
       display: 'flex',
       justifyContent: 'space-between',
       padding: theme.spacing(1, 1),
       '&:nth-child(even)': {
-        backgroundColor: theme.palette.background.paper
+        backgroundColor: theme.palette.background.default
       }
     },
     left: {
@@ -61,29 +63,48 @@ const useStyles = makeStyles(theme =>
   builderEffectsStyles(theme, effectsConfig)
 )
 
-const BuilderEffects = ({ effects }) => {
+const BuilderEffectsSection = ({ effects, category, effectsConfig }) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      {Object.keys(effectsConfig).map(key => (
-        <div className={classes.section} key={key}>
-          <div className={classes.category}>{key}</div>
-          {effectsConfig[key].map(effect => (
-            <div className={classes.effect} key={effect.name}>
-              <div className={classes.left}>
-                <i className={`${classes.icon} ${effect.name}`} />
-                <div className={classes.name}>{effect.text}</div>
-              </div>
-              <div className={classes.right}>
-                <div className={classes.value}>
-                  {effects[effect.name] || 0}{effect.name.includes('percentage') && '%'}
-                </div>
+      <ExpansionPanel>
+        <ExpansionPanelSummary
+          className={classes.category}
+          expandIcon={<ExpandMoreIcon />}
+        >
+          <Typography className={classes.categoryHeading}>{category}</Typography>
+        </ExpansionPanelSummary>
+        {effectsConfig.map(effect => (
+          <ExpansionPanelDetails className={classes.effect} key={effect.name}>
+            <div className={classes.left}>
+              <i className={`${classes.icon} ${effect.name}`} />
+              <div className={classes.name}>{effect.text}</div>
+            </div>
+            <div className={classes.right}>
+              <div className={classes.value}>
+                {effects[effect.name] || 0}
+                {effect.name.includes('percentage') && '%'}
               </div>
             </div>
-          ))}
-        </div>
-      ))}
+          </ExpansionPanelDetails>
+        ))}
+      </ExpansionPanel>
     </div>
+  )
+}
+
+const BuilderEffects = ({ effects }) => {
+  return (
+    <>
+      {Object.keys(effectsConfig).map(key => (
+        <BuilderEffectsSection
+          key={key}
+          effects={effects}
+          category={key}
+          effectsConfig={effectsConfig[key]}
+        />
+      ))}
+    </>
   )
 }
 
