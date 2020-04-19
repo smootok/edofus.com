@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 
 import {
@@ -55,9 +56,11 @@ const DrawerAppBar = ({ handleDrawerToggle, drawerWidth, currentPage }) => {
           {currentPage.name}
         </Typography>
         <div className={classes.rightMenu}>
-          <Button>
-            <AccountCircleIcon style={{ marginRight: 4 }} /> Login
-          </Button>
+          <Link to='/sign-in'>
+            <Button>
+              <AccountCircleIcon style={{ marginRight: 4 }} /> Sign in
+            </Button>
+          </Link>
         </div>
       </Toolbar>
     </AppBar>

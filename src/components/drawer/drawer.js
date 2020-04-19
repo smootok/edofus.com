@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
 import {
@@ -43,10 +43,10 @@ const useStyles = makeStyles(theme => {
 
 const Drawer = ({ config }) => {
   const classes = useStyles()
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [currentPage, setCurrentPage] = useState({})
+  const [mobileOpen, setMobileOpen] = React.useState(false)
+  const [currentPage, setCurrentPage] = React.useState({})
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!currentPage.name) return
     document.title = `edofus - ${currentPage.name}`
   })
