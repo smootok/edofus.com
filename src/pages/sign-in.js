@@ -1,9 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { useCookies } from 'react-cookie'
+import axios from 'axios'
 import { makeStyles } from '@material-ui/core/styles'
-import { Button, TextField, Typography } from '@material-ui/core'
+import {
+  Button,
+  TextField,
+  Typography,
+  FormHelperText
+} from '@material-ui/core'
 
 import SignInSignUpLayout from '../components/sign-in-sign-up/sign-in-sign-up-layout'
+import { apiBaseUrl } from '../config'
+import useUser from '../hooks/use-user'
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -39,26 +48,56 @@ const useStyles = makeStyles(theme => ({
     display: 'inline-block',
     marginRight: 4,
     color: theme.palette.grey[500]
+  },
+  errorMessage: {
+    textAlign: 'center',
+    marginTop: 10,
+    color: theme.palette.error.main
   }
 }))
 
 const SignIn = () => {
   const classes = useStyles()
-
+  const [, setCookie] = useCookies(['jwt'])
   const [state, setState] = React.useState({ email: '', password: '' })
+  const [error, setError] = React.useState('')
+  const { isLoggedIn, saveUser } = useUser()
+
+  const history = useHistory()
+
+  React.useLayoutEffect(() => {
+    if (isLoggedIn) {
+      history.push({ pathname: '/builder' })
+    }
+  }, [])
 
   React.useEffect(() => {
     document.title = 'edofus - Sign in'
-  })
+  }, [])
 
   const handleChange = e => {
     const { name, value } = e.target
     setState(state => ({ ...state, [name]: value }))
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
+    try {
+      const url = `${apiBaseUrl}/users/sign-in`
+      const response = await axios.post(url, state)
+      if (response.data.status === 'success') {
+        setCookie('jwt', response.data.token, {
+          expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000)
+        })
+        saveUser(response.data.data.user, response.data.token)
+        setError('')
+        history.push({ pathname: '/builder' })
+      }
+    } catch (err) {
+      setError(err.response.data.message)
+    }
   }
+
   return (
     <SignInSignUpLayout>
       <div className={classes.root}>
@@ -71,7 +110,9 @@ const SignIn = () => {
               We're so excited to see you again!
             </Typography>
           </div>
-
+          <FormHelperText className={classes.errorMessage}>
+            {error}
+          </FormHelperText>
           <div className={classes.inputs}>
             <TextField
               className={classes.input}
@@ -104,6 +145,7 @@ const SignIn = () => {
             variant='contained'
             color='primary'
             size='large'
+            type='submit'
           >
             Sign in
           </Button>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-
+import axios from 'axios'
 import { ThemeProvider } from '@material-ui/core/styles'
 import { CssBaseline } from '@material-ui/core'
 
@@ -13,8 +13,32 @@ import Weapons from './pages/weapons'
 import Pets from './pages/pets'
 import Builder from './pages/builder'
 import PageNotFound from './pages/404'
+import { apiBaseUrl } from './config'
+import useUser from './hooks/use-user'
+import { useCookies } from 'react-cookie'
 
 const App = () => {
+  const { saveUser } = useUser()
+  const [cookie] = useCookies(['jwt'])
+
+  const isLoggedIn = async () => {
+    if (!cookie.jwt) return
+    try {
+      const url = `${apiBaseUrl}/users/is-logged-in`
+      const headers = { authorization: `Bearer ${cookie.jwt}` }
+      const response = await axios.post(url, {}, headers)
+      if (response.data.status === 'success') {
+        saveUser(response.data.data.user, response.data.token)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  React.useEffect(() => {
+    isLoggedIn()
+  }, [])
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

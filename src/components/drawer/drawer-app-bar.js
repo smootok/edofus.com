@@ -1,10 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
+import { useCookies } from 'react-cookie'
 
 import {
   Menu as MenuIcon,
-  AccountCircle as AccountCircleIcon
+  AccountCircle as SignInIcon,
+  ExitToApp as SignOutIcon
 } from '@material-ui/icons'
 
 import {
@@ -14,6 +16,8 @@ import {
   Button,
   Typography
 } from '@material-ui/core'
+
+import useUser from '../../hooks/use-user'
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -39,6 +43,16 @@ const useStyles = makeStyles(theme => ({
 
 const DrawerAppBar = ({ handleDrawerToggle, drawerWidth, currentPage }) => {
   const classes = useStyles({ drawerWidth })
+  const history = useHistory()
+  const [, , removeCookie] = useCookies(['jwt'])
+  const { isLoggedIn, removeUser } = useUser()
+
+  const handleSignOut = e => {
+    if (!isLoggedIn) return
+    removeCookie('jwt')
+    removeUser()
+    history.push({ pathname: '/' })
+  }
 
   return (
     <AppBar position='fixed' className={classes.appBar}>
@@ -56,11 +70,17 @@ const DrawerAppBar = ({ handleDrawerToggle, drawerWidth, currentPage }) => {
           {currentPage.name}
         </Typography>
         <div className={classes.rightMenu}>
-          <Link to='/sign-in'>
-            <Button>
-              <AccountCircleIcon style={{ marginRight: 4 }} /> Sign in
+          {isLoggedIn ? (
+            <Button onClick={handleSignOut}>
+              <SignOutIcon style={{ marginRight: 4 }} /> Sign out
             </Button>
-          </Link>
+          ) : (
+            <Link to='/sign-in'>
+              <Button>
+                <SignInIcon style={{ marginRight: 4 }} /> Sign in
+              </Button>
+            </Link>
+          )}
         </div>
       </Toolbar>
     </AppBar>
