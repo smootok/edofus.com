@@ -8,6 +8,7 @@ import theme from './theme'
 import Home from './pages/home'
 import SignIn from './pages/sign-in'
 import SignUp from './pages/sign-up'
+import ResetPassword from './pages/reset-password'
 import Equipment from './pages/equipment'
 import Weapons from './pages/weapons'
 import Pets from './pages/pets'
@@ -63,6 +64,9 @@ const App = () => {
         </Route>
         <Route exact path='/encyclopedia/pets'>
           <Pets />
+        </Route>
+        <Route exact path='/reset-password/:token'>
+          <ResetPassword />
         </Route>
         <Route path='*'>
           <PageNotFound />

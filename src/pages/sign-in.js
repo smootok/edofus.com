@@ -7,10 +7,12 @@ import {
   Button,
   TextField,
   Typography,
-  FormHelperText
+  FormHelperText,
+  CircularProgress
 } from '@material-ui/core'
 
 import SignInSignUpLayout from '../components/sign-in-sign-up/sign-in-sign-up-layout'
+import ForgotPassword from '../components/sign-in-sign-up/forgot-password'
 import { apiBaseUrl } from '../config'
 import useUser from '../hooks/use-user'
 
@@ -53,6 +55,19 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     marginTop: 10,
     color: theme.palette.error.main
+  },
+  successMessage: {
+    textAlign: 'center',
+    marginTop: 10,
+    color: theme.palette.primary.main
+  },
+  forgotPassword: {
+    cursor: 'pointer'
+  },
+  loading: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: theme.spacing(4)
   }
 }))
 
@@ -60,8 +75,11 @@ const SignIn = () => {
   const classes = useStyles()
   const [, setCookie] = useCookies(['jwt'])
   const [state, setState] = React.useState({ email: '', password: '' })
+  const [isLoading, setIsLoading] = React.useState(false)
   const [error, setError] = React.useState('')
   const { isLoggedIn, saveUser } = useUser()
+  const [openForgotPassword, setOpenForgotPassword] = React.useState(false)
+  const [isForgotPasswordError, setIsForgotPasswordError] = React.useState(null)
 
   const history = useHistory()
 
@@ -75,6 +93,13 @@ const SignIn = () => {
     document.title = 'edofus - Sign in'
   }, [])
 
+  const handleOpenForgotPassword = () => {
+    setOpenForgotPassword(true)
+  }
+  const handleCloseForgotPassword = () => {
+    setOpenForgotPassword(false)
+  }
+
   const handleChange = e => {
     const { name, value } = e.target
     setState(state => ({ ...state, [name]: value }))
@@ -83,6 +108,7 @@ const SignIn = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
+      setIsLoading(true)
       const url = `${apiBaseUrl}/users/sign-in`
       const response = await axios.post(url, state)
       if (response.data.status === 'success') {
@@ -96,6 +122,7 @@ const SignIn = () => {
     } catch (err) {
       setError(err.response.data.message)
     }
+    setIsLoading(false)
   }
 
   return (
@@ -113,6 +140,16 @@ const SignIn = () => {
           <FormHelperText className={classes.errorMessage}>
             {error}
           </FormHelperText>
+          {isForgotPasswordError === true && (
+            <FormHelperText className={classes.errorMessage}>
+              There was an error sending the email. Try again later!
+            </FormHelperText>
+          )}
+          {isForgotPasswordError === false && (
+            <FormHelperText className={classes.successMessage}>
+              Reset password link sent to your email!
+            </FormHelperText>
+          )}
           <div className={classes.inputs}>
             <TextField
               className={classes.input}
@@ -135,11 +172,21 @@ const SignIn = () => {
               onChange={handleChange}
             />
           </div>
-
-          <Typography variant='subtitle2' color='primary'>
-            Forget Password?
-          </Typography>
-
+          <>
+            <Typography
+              className={classes.forgotPassword}
+              onClick={handleOpenForgotPassword}
+              variant='subtitle2'
+              color='primary'
+            >
+              Forgot Password?
+            </Typography>
+            <ForgotPassword
+              open={openForgotPassword}
+              setIsForgotPasswordError={setIsForgotPasswordError}
+              handleClose={handleCloseForgotPassword}
+            />
+          </>
           <Button
             className={classes.submitButton}
             variant='contained'
@@ -149,7 +196,6 @@ const SignIn = () => {
           >
             Sign in
           </Button>
-
           <Typography variant='subtitle2' className={classes.needAccount}>
             Need an account?
           </Typography>
@@ -158,6 +204,11 @@ const SignIn = () => {
               Sign up
             </Typography>
           </Link>
+          {isLoading && (
+            <div className={classes.loading}>
+              <CircularProgress />
+            </div>
+          )}
         </form>
       </div>
     </SignInSignUpLayout>

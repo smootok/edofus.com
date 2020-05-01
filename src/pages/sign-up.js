@@ -6,7 +6,8 @@ import {
   Button,
   TextField,
   Typography,
-  FormHelperText
+  FormHelperText,
+  CircularProgress
 } from '@material-ui/core'
 import axios from 'axios'
 
@@ -43,6 +44,11 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     marginTop: 10,
     color: theme.palette.error.main
+  },
+  loading: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: theme.spacing(4)
   }
 }))
 
@@ -55,6 +61,7 @@ const SignUp = () => {
     email: '',
     password: ''
   })
+  const [isLoading, setIsLoading] = React.useState(false)
   const [error, setError] = React.useState('')
   const history = useHistory()
 
@@ -76,6 +83,7 @@ const SignUp = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
+      setIsLoading(true)
       const url = `${apiBaseUrl}/users/sign-up`
       const response = await axios.post(url, state)
       setCookie('jwt', response.data.token, {
@@ -85,8 +93,13 @@ const SignUp = () => {
       setError('')
       history.push({ pathname: '/builder' })
     } catch (err) {
-      setError(err.response.data.message)
+      if (err.response && err.response.data) {
+        setError(err.response.data.message)
+      } else {
+        setError(err.response)
+      }
     }
+    setIsLoading(false)
   }
 
   return (
@@ -149,6 +162,11 @@ const SignUp = () => {
               Already have an account?
             </Typography>
           </Link>
+          {isLoading && (
+            <div className={classes.loading}>
+              <CircularProgress />
+            </div>
+          )}
         </form>
       </div>
     </SignInSignUpLayout>
