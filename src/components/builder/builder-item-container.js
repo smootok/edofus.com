@@ -92,6 +92,7 @@ const BuilderItemContainer = ({
           <BuilderItem
             config={builderConfig.cloak}
             currentItemBuild={currentBuild.cloak}
+            handleItemDelete={handleItemDelete}
           />
           <BuilderItem
             config={builderConfig.belt}

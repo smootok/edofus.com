@@ -63,16 +63,25 @@ const useStyles = makeStyles(theme =>
   builderEffectsStyles(theme, effectsConfig)
 )
 
-const BuilderEffectsSection = ({ effects, category, effectsConfig }) => {
+const BuilderEffectsSection = ({
+  effects,
+  category,
+  effectsConfig,
+  panel,
+  expanded,
+  handleChange
+}) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <ExpansionPanel>
+      <ExpansionPanel expanded={expanded[panel] || false} onChange={() => handleChange(panel)}>
         <ExpansionPanelSummary
           className={classes.category}
           expandIcon={<ExpandMoreIcon />}
         >
-          <Typography className={classes.categoryHeading}>{category}</Typography>
+          <Typography className={classes.categoryHeading}>
+            {category}
+          </Typography>
         </ExpansionPanelSummary>
         {effectsConfig.map(effect => (
           <ExpansionPanelDetails className={classes.effect} key={effect.name}>
@@ -94,14 +103,26 @@ const BuilderEffectsSection = ({ effects, category, effectsConfig }) => {
 }
 
 const BuilderEffects = ({ effects }) => {
+  const [expanded, setExpanded] = React.useState({ panel1: true })
+
+  const handleChange = panel => {
+    setExpanded(expanded => ({
+      ...expanded,
+      [panel]: !expanded[panel]
+    }))
+  }
+
   return (
     <>
-      {Object.keys(effectsConfig).map(key => (
+      {Object.keys(effectsConfig).map((key, index) => (
         <BuilderEffectsSection
           key={key}
           effects={effects}
           category={key}
           effectsConfig={effectsConfig[key]}
+          panel={`panel${index + 1}`}
+          expanded={expanded}
+          handleChange={handleChange}
         />
       ))}
     </>

@@ -51,7 +51,8 @@ const DrawerAppBar = ({ handleDrawerToggle, drawerWidth, currentPage }) => {
     if (!isLoggedIn) return
     removeCookie('jwt')
     removeUser()
-    history.push({ pathname: '/' })
+    window.localStorage.removeItem('currentBuild')
+    history.push({ pathname: '/sign-in' })
   }
 
   return (
@@ -75,7 +76,7 @@ const DrawerAppBar = ({ handleDrawerToggle, drawerWidth, currentPage }) => {
               <SignOutIcon style={{ marginRight: 4 }} /> Sign out
             </Button>
           ) : (
-            <Link to='/sign-in'>
+            <Link to='/sign-in' style={{ textDecoration: 'none' }}>
               <Button>
                 <SignInIcon style={{ marginRight: 4 }} /> Sign in
               </Button>

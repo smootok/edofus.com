@@ -98,7 +98,7 @@ const Characteristic = ({
         </div>
         <div className={classes.scrollCheckBoxContainer}>
           <Checkbox
-            checked={scrollsValue === 101}
+            checked={scrollsValue === 100}
             name={name}
             color='primary'
             inputProps={{ 'aria-label': 'primary checkbox' }}

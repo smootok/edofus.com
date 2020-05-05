@@ -67,7 +67,7 @@ const SignUp = () => {
 
   React.useLayoutEffect(() => {
     if (isLoggedIn) {
-      history.push({ pathname: '/builder' })
+      history.push({ pathname: '/' })
     }
   }, [])
 
@@ -91,7 +91,7 @@ const SignUp = () => {
       })
       saveUser(response.data.data.user, response.data.token)
       setError('')
-      history.push({ pathname: '/builder' })
+      history.push({ pathname: '/' })
     } catch (err) {
       if (err.response && err.response.data) {
         setError(err.response.data.message)

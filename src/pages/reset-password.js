@@ -50,7 +50,7 @@ const Home = () => {
 
   React.useLayoutEffect(() => {
     if (isLoggedIn) {
-      history.push({ pathname: '/builder' })
+      history.push({ pathname: '/' })
     }
   }, [])
 
@@ -70,7 +70,7 @@ const Home = () => {
         })
         saveUser(response.data.data.user, response.data.token)
         setError('')
-        history.push({ pathname: '/builder' })
+        history.push({ pathname: '/' })
       }
     } catch (err) {
       setError(err.response.data.message)

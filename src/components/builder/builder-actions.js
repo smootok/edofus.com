@@ -1,6 +1,17 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { FormControl, InputLabel, Select, TextField } from '@material-ui/core'
+import {
+  FormControl,
+  InputLabel,
+  Select,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Button
+} from '@material-ui/core'
 import { Save as SaveIcon, Delete as DeleteIcon } from '@material-ui/icons'
 
 import { classesConfig } from './builder.config'
@@ -49,14 +60,64 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
+const SaveBuilderName = ({ open, handleClose, handleSaveBuild }) => {
+  const [name, setName] = React.useState('')
+  const handleChange = e => {
+    setName(e.target.value)
+  }
+
+  return (
+    <div>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby='form-dialog-title'
+      >
+        <DialogTitle id='form-dialog-title'>Save your build</DialogTitle>
+        <DialogContent>
+          <DialogContentText>Enter a name for your build</DialogContentText>
+          <TextField
+            autoFocus
+            margin='dense'
+            name='name'
+            label='Name'
+            type='text'
+            fullWidth
+            value={name}
+            onChange={handleChange}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color='primary'>
+            Cancel
+          </Button>
+          <Button onClick={() => handleSaveBuild(name)} color='primary'>
+            Save
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  )
+}
+
 const BuilderActions = ({
   level,
   classType,
   handleLevelChange,
   handleClassTypeChange,
-  handleItemsReset
+  handleItemsReset,
+  handleSaveBuild
 }) => {
   const classes = useStyles()
+  const [open, setOpen] = React.useState(false)
+
+  const handleOpen = () => {
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
 
   return (
     <div className={classes.root}>
@@ -99,12 +160,23 @@ const BuilderActions = ({
         </div>
       </div>
       <div className={classes.right}>
-        <div className={`${classes.iconControl} ${classes.deleteIcon}`} onClick={handleItemsReset}>
+        <div
+          className={`${classes.iconControl} ${classes.deleteIcon}`}
+          onClick={handleItemsReset}
+        >
           <DeleteIcon />
         </div>
-        <div className={`${classes.iconControl} ${classes.saveIcon}`}>
+        <div
+          className={`${classes.iconControl} ${classes.saveIcon}`}
+          onClick={handleOpen}
+        >
           <SaveIcon />
         </div>
+        <SaveBuilderName
+          open={open}
+          handleClose={handleClose}
+          handleSaveBuild={handleSaveBuild}
+        />
       </div>
     </div>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import { useCookies } from 'react-cookie'
 import axios from 'axios'
 import { makeStyles } from '@material-ui/core/styles'
@@ -80,12 +80,13 @@ const SignIn = () => {
   const { isLoggedIn, saveUser } = useUser()
   const [openForgotPassword, setOpenForgotPassword] = React.useState(false)
   const [isForgotPasswordError, setIsForgotPasswordError] = React.useState(null)
+  const { message } = useLocation()
 
   const history = useHistory()
 
   React.useLayoutEffect(() => {
     if (isLoggedIn) {
-      history.push({ pathname: '/builder' })
+      history.push({ pathname: '/' })
     }
   }, [])
 
@@ -117,7 +118,7 @@ const SignIn = () => {
         })
         saveUser(response.data.data.user, response.data.token)
         setError('')
-        history.push({ pathname: '/builder' })
+        history.push({ pathname: '/' })
       }
     } catch (err) {
       setError(err.response.data.message)
@@ -148,6 +149,11 @@ const SignIn = () => {
           {isForgotPasswordError === false && (
             <FormHelperText className={classes.successMessage}>
               Reset password link sent to your email!
+            </FormHelperText>
+          )}
+          {message && (
+            <FormHelperText className={classes.successMessage}>
+              {message}
             </FormHelperText>
           )}
           <div className={classes.inputs}>

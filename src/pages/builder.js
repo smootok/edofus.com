@@ -1,7 +1,8 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid } from '@material-ui/core'
+import axios from 'axios'
 
 import Layout from '../components/layout/layout'
 import BuilderItemContainer from '../components/builder/builder-item-container'
@@ -9,6 +10,8 @@ import BuilderEffects from '../components/builder/builder-effects'
 import { initBuild, builderConfig } from '../components/builder/builder.config'
 import BuilderCharacteristics from '../components/builder/builder-characteristics'
 import BuilderActions from '../components/builder/builder-actions'
+import useUser from '../hooks/use-user'
+import { apiBaseUrl } from '../config'
 import {
   calcBasePoints,
   calcEffects
@@ -41,17 +44,22 @@ const useStyles = makeStyles(theme => ({
 
 const Builder = () => {
   const classes = useStyles()
-  const { data: selectedItemData } = useLocation()
+  const { data: selectedItemData, build } = useLocation()
   const [currentBuild, setCurrentBuild] = React.useState(() => {
     return (
+      build ||
       JSON.parse(window.localStorage.getItem('currentBuild')) || {
         ...initBuild
       }
     )
   })
   const [basePoints, setBasePoints] = React.useState(0)
-
   const [effects, setEffects] = React.useState({})
+  const [saveBuildError, setSaveBuildError] = React.useState()
+
+  const { user, isLoggedIn, token } = useUser()
+
+  const history = useHistory()
 
   React.useEffect(() => {
     window.scrollTo(0, 0)
@@ -112,7 +120,7 @@ const Builder = () => {
     const { name, checked } = e.target
     setCurrentBuild(currentBuild => ({
       ...currentBuild,
-      scrolls: { ...currentBuild.scrolls, [name]: checked ? 101 : 0 }
+      scrolls: { ...currentBuild.scrolls, [name]: checked ? 100 : 0 }
     }))
   }
 
@@ -128,6 +136,31 @@ const Builder = () => {
       ...initBuild,
       classType: currentBuild.classType
     }))
+  }
+
+  const handleSaveBuild = async name => {
+    if (!name) return
+    if (!isLoggedIn) {
+      history.push({
+        pathname: '/sign-in',
+        message: 'Please sign-in to save your build'
+      })
+    }
+    try {
+      const headers = { authorization: `Bearer ${token}` }
+      const newData = { name, build: JSON.stringify(currentBuild) }
+      if (currentBuild.id && user._id === currentBuild.userId) {
+        const url = `${apiBaseUrl}/${currentBuild.id}`
+        await axios.patch(url, newData, { headers })
+      } else {
+        const url = `${apiBaseUrl}/`
+        await axios.post(url, newData, { headers })
+      }
+      setCurrentBuild({ ...initBuild })
+      history.push({ pathname: '/builds' })
+    } catch (err) {
+      setSaveBuildError(err.response.data.message)
+    }
   }
 
   return (
@@ -160,11 +193,13 @@ const Builder = () => {
               handleClassTypeChange={handleClassTypeChange}
               handleBaseStatsChange={handleBaseStatsChange}
               handleItemsReset={handleItemsReset}
+              handleSaveBuild={handleSaveBuild}
             />
             <BuilderItemContainer
               builderConfig={builderConfig}
               currentBuild={currentBuild}
               handleItemDelete={handleItemDelete}
+              saveBuildError={saveBuildError}
             />
           </Grid>
           <Grid

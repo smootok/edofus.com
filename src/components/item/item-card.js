@@ -40,7 +40,7 @@ const ItemCard = ({ item }) => {
     if (!builderConfig) return
 
     history.push({
-      pathname: '/builder',
+      pathname: '/',
       data: { currentItemBuild: item, builderConfig }
     })
   }

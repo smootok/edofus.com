@@ -5,14 +5,14 @@ import { ThemeProvider } from '@material-ui/core/styles'
 import { CssBaseline } from '@material-ui/core'
 
 import theme from './theme'
-import Home from './pages/home'
+import Builder from './pages/builder'
+import Builds from './pages/builds'
 import SignIn from './pages/sign-in'
 import SignUp from './pages/sign-up'
 import ResetPassword from './pages/reset-password'
 import Equipment from './pages/equipment'
 import Weapons from './pages/weapons'
 import Pets from './pages/pets'
-import Builder from './pages/builder'
 import PageNotFound from './pages/404'
 import { apiBaseUrl } from './config'
 import useUser from './hooks/use-user'
@@ -22,12 +22,12 @@ const App = () => {
   const { saveUser } = useUser()
   const [cookie] = useCookies(['jwt'])
 
-  const isLoggedIn = async () => {
+  const authenticate = async () => {
     if (!cookie.jwt) return
     try {
-      const url = `${apiBaseUrl}/users/is-logged-in`
+      const url = `${apiBaseUrl}/users/authenticate`
       const headers = { authorization: `Bearer ${cookie.jwt}` }
-      const response = await axios.post(url, {}, headers)
+      const response = await axios.post(url, {}, { headers })
       if (response.data.status === 'success') {
         saveUser(response.data.data.user, response.data.token)
       }
@@ -37,7 +37,7 @@ const App = () => {
   }
 
   React.useEffect(() => {
-    isLoggedIn()
+    authenticate()
   }, [])
 
   return (
@@ -45,16 +45,16 @@ const App = () => {
       <CssBaseline />
       <Switch>
         <Route exact path='/'>
-          <Home />
+          <Builder />
+        </Route>
+        <Route exact path='/builds'>
+          <Builds />
         </Route>
         <Route exact path='/sign-in'>
           <SignIn />
         </Route>
         <Route exact path='/sign-up'>
           <SignUp />
-        </Route>
-        <Route exact path='/builder'>
-          <Builder />
         </Route>
         <Route exact path='/encyclopedia/equipment'>
           <Equipment />

@@ -30,7 +30,7 @@ export const typesConfig = {
 }
 
 export const effectsConfig = {
-  common: [
+  primary: [
     {
       name: 'vitality',
       text: 'Vitality',
@@ -52,36 +52,6 @@ export const effectsConfig = {
         backgroundPosition: '0 -37px'
       }
     },
-    {
-      name: 'initiative',
-      text: 'Initiative',
-      css: {
-        backgroundPosition: '0 -190px'
-      }
-    },
-    {
-      name: 'prospecting',
-      text: 'Prospecting',
-      css: {
-        backgroundPosition: '0 -264px'
-      }
-    },
-    {
-      name: 'range',
-      text: 'Range',
-      css: {
-        backgroundPosition: '0 -113px'
-      }
-    },
-    {
-      name: 'summons',
-      text: 'Summons',
-      css: {
-        backgroundPosition: '0 -493px'
-      }
-    }
-  ],
-  primary: [
     {
       name: 'wisdom',
       text: 'Wisdom',
@@ -119,6 +89,34 @@ export const effectsConfig = {
     }
   ],
   secondary: [
+    {
+      name: 'initiative',
+      text: 'Initiative',
+      css: {
+        backgroundPosition: '0 -190px'
+      }
+    },
+    {
+      name: 'prospecting',
+      text: 'Prospecting',
+      css: {
+        backgroundPosition: '0 -264px'
+      }
+    },
+    {
+      name: 'range',
+      text: 'Range',
+      css: {
+        backgroundPosition: '0 -113px'
+      }
+    },
+    {
+      name: 'summons',
+      text: 'Summons',
+      css: {
+        backgroundPosition: '0 -493px'
+      }
+    },
     {
       name: 'critical-percentage',
       text: 'Critical',
