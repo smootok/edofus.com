@@ -104,6 +104,7 @@ const Builder = () => {
 
   const handleBaseStatsChange = e => {
     const { name, value } = e.target
+    if (value < 0) return
     const newCurrentBuild = {
       ...currentBuild,
       baseStats: {
